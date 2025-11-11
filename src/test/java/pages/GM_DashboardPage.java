@@ -7,34 +7,31 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import base.BaseClass;
 
 public class GM_DashboardPage extends BaseClass{
 	
-	@FindBy(xpath="//a[text()='Resource Approval']")
-	WebElement navLink_ResourceApproval;
+	@FindBy(xpath="//a[text()='Resource Approval']")WebElement navLink_ResourceApproval;
 	
-	@FindBy(xpath="//span[@class='mb-0 text-sm font-weight-bold']")
-	WebElement lnk_greetingsProfile;
+	@FindBy(xpath="//span[@class='mb-0 text-sm font-weight-bold']")WebElement lnk_greetingsProfile;
 	
-	@FindBy(xpath="(//span[text()='My profile'])[2]")
-	WebElement btn_MyProfile;
+	@FindBy(xpath="(//span[text()='My profile'])[2]")WebElement btn_MyProfile;
 	
-	@FindBy(xpath="(//span[text()='Logout'])[2]")
-	WebElement btn_Logout;
+	@FindBy(xpath="(//span[text()='Logout'])[2]")WebElement btn_Logout;
 	
-	@FindBy(xpath="//a[text()='Project']")
-	WebElement navlink_Projects;
+	@FindBy(xpath="//a[text()='Project']") WebElement navlink_Projects;
 	
-	@FindBy(xpath="//a[text()='Leave Management']")
-	WebElement navlink_leaveManagement;
+	@FindBy(xpath="//a[text()='Leave Management']") WebElement navlink_leaveManagement;
 	
-	@FindBy(xpath="//a[text()='Client']")
-	WebElement navlink_client;
+	@FindBy(xpath="//a[text()='Client']") WebElement navlink_client;
 	
-	@FindBy(xpath="//a[text()='Project']")
-	WebElement navlink_project;
+	@FindBy(xpath="//a[text()='Project']") WebElement navlink_project;
+	
+	@FindBy(xpath="//a[text()='Budget']") WebElement navlink_Budget;
+	
+	@FindBy(xpath="//a[text()='Department']") WebElement navlink_department;
 	
 	
 	public GM_DashboardPage() {
@@ -68,6 +65,17 @@ public class GM_DashboardPage extends BaseClass{
 	
 	public void clickOnProject() {
 		navlink_project.click();
+	}
+	
+	public void clickOnBudget() {
+		navlink_Budget.click();
+	}
+	
+	public void clickOnDepartment() {
+		navlink_department.click();
+		String exp_URL = "https://aecp.aecearth.io/general-admin/general-management/department";
+		String act_URL=driver.getCurrentUrl();
+		Assert.assertEquals(act_URL, exp_URL, "Department page is not displayed!");
 	}
 
 	

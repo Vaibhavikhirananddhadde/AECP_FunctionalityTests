@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-07T16:09:03 IST" name="Default suite" finished-at="2025-11-07T16:09:14 IST" duration-ms="11039">
+  <suite started-at="2025-11-10T18:27:17 IST" name="Default suite" finished-at="2025-11-10T18:27:38 IST" duration-ms="21007">
     <groups>
     </groups>
-    <test started-at="2025-11-07T16:09:03 IST" name="Default test" finished-at="2025-11-07T16:09:14 IST" duration-ms="11039">
-      <class name="tests.PM_Panel_Tests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.PM_Panel_Tests@45815ffc]" started-at="2025-11-07T16:09:03 IST" name="setup" finished-at="2025-11-07T16:09:03 IST" duration-ms="9" status="PASS">
+    <test started-at="2025-11-10T18:27:17 IST" name="Default test" finished-at="2025-11-10T18:27:38 IST" duration-ms="21007">
+      <class name="tests.GM_Panel_Tests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.GM_Panel_Tests@6622fc65]" started-at="2025-11-10T18:27:17 IST" name="setup" finished-at="2025-11-10T18:27:17 IST" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.PM_Panel_Tests@45815ffc]" started-at="2025-11-07T16:09:03 IST" name="setUp" finished-at="2025-11-07T16:09:09 IST" duration-ms="5876" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.GM_Panel_Tests@6622fc65]" started-at="2025-11-10T18:27:17 IST" name="setUp" finished-at="2025-11-10T18:27:23 IST" duration-ms="6406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="AECP_PM_TC005()[pri:0, instance:tests.PM_Panel_Tests@45815ffc]" started-at="2025-11-07T16:09:09 IST" name="AECP_PM_TC005" finished-at="2025-11-07T16:09:13 IST" duration-ms="4845" status="PASS">
+        <test-method signature="AECP_GM_TC008()[pri:0, instance:tests.GM_Panel_Tests@6622fc65]" started-at="2025-11-10T18:27:23 IST" name="AECP_GM_TC008" finished-at="2025-11-10T18:27:38 IST" duration-ms="14212" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AECP_PM_TC005 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.PM_Panel_Tests@45815ffc]" started-at="2025-11-07T16:09:13 IST" name="tearDown" finished-at="2025-11-07T16:09:14 IST" duration-ms="275" status="PASS">
+        </test-method> <!-- AECP_GM_TC008 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.GM_Panel_Tests@6622fc65]" started-at="2025-11-10T18:27:38 IST" name="tearDown" finished-at="2025-11-10T18:27:38 IST" duration-ms="351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.PM_Panel_Tests -->
+      </class> <!-- tests.GM_Panel_Tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

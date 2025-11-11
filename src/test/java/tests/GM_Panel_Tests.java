@@ -3,8 +3,10 @@ package tests;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import pages.GM_BudgetPage;
 import pages.GM_ClientPage;
 import pages.GM_DashboardPage;
+import pages.GM_DepartmentPage;
 import pages.GM_LeaveManagementPage;
 import pages.GM_ProjectsPage;
 import pages.GM_ResourceApprovalPage;
@@ -25,7 +27,8 @@ public class GM_Panel_Tests extends BaseClass{
 	public GM_LeaveManagementPage gm_leaveManagement;
 	public GM_ClientPage gm_clientpage;
 	public GM_ProjectsPage gm_projects;
-	
+	public GM_BudgetPage gm_budget;
+	public GM_DepartmentPage gm_department;
 	
 	
 	 //GM can Approve/Reject resource requests.
@@ -77,7 +80,6 @@ public class GM_Panel_Tests extends BaseClass{
 		gm_dashboard.clickOnLeaveManagement();
 		gm_leaveManagement = new GM_LeaveManagementPage();
 		gm_leaveManagement.rejectHRLeave();
-		
     }
     
     //GM can add Clients.
@@ -90,8 +92,7 @@ public class GM_Panel_Tests extends BaseClass{
 		gm_dashboard =new GM_DashboardPage();
 		gm_dashboard.clickOnClient();
 		gm_clientpage = new GM_ClientPage();
-		gm_clientpage.addClient();
-		
+		gm_clientpage.addClient();	
     }
     
     //GM can add projects.
@@ -105,6 +106,34 @@ public class GM_Panel_Tests extends BaseClass{
 		gm_dashboard.clickOnProject();
 		gm_projects = new GM_ProjectsPage();
 		gm_projects.addingProject();
+    }
+    
+    /*General Manager should be able to see the budget for the selected project
+    (General manager will add budget for the project while creating the project).*/
+    @Test
+    public void AECP_GM_TC007() throws Exception {
+    	waitImplicit();
+    	land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard =new GM_DashboardPage();
+		gm_dashboard.clickOnBudget();
+		gm_budget = new GM_BudgetPage();
+		gm_budget.checkBudgetForProject();
+    }
+    
+    //The general manager should see all the added departments.(HR adds the department).
+    @Test
+    public void AECP_GM_TC008() throws Exception {
+    	waitImplicit();
+    	land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard =new GM_DashboardPage();
+		gm_dashboard.clickOnDepartment();
+		gm_department = new GM_DepartmentPage();
+		gm_department.checkDepartmentDisplayed();
+    	
     }
 
 }

@@ -14,12 +14,14 @@ import pages.HR_LeaveManagementPage;
 import pages.HR_ResourceAllocationPage;
 import pages.HR_RolePage;
 import pages.LandingPage;
+import pages.PM_BudgetPage;
 import pages.PM_DashboardPage;
 import pages.PM_EngineersPage;
 import pages.PM_MaterialRequestPage;
 import pages.PM_ProjectPage;
 import pages.PM_ResourceRequisitionPage;
 import pages.PM_TaskPage;
+import pages.PM_TaskReportPage;
 import pages.SEng_DashboardPage;
 import pages.SEng_ResourceRequestPage;
 
@@ -43,6 +45,8 @@ public class PM_Panel_Tests extends BaseClass{
 	public PM_TaskPage pm_task;
 	public PM_MaterialRequestPage pm_materialRequest;
 	public PM_EngineersPage pm_engineer;
+	public PM_BudgetPage pm_budget;
+	public PM_TaskReportPage pm_taskReport;
 	
 	
 	//Project Manager should see Total projects, To Do projects, In-Progress projects, Completed Tasks in the dashboard.
@@ -111,5 +115,47 @@ public class PM_Panel_Tests extends BaseClass{
 		
    }
 	
+   //Project Manager should be able to see the budget for the selected project (General manager will add budget for the project while creating the project).
+  @Test
+  public void AECP_PM_TC006() throws Exception {
+	  waitImplicit();
+		land= new LandingPage();
+		land.clickLogin();
+		land.loginPM();
+		pm_dashboard = new PM_DashboardPage();
+		pm_dashboard.clickOnBudget();
+		Thread.sleep(3000);
+		pm_budget = new PM_BudgetPage();
+		pm_budget.checkBudgetForProject();
+		
+  }
+  
+  //Project Manager should be able to generate task report assigned to him.
+  @Test
+  public void AECP_PM_TC007() throws Exception {
+	   waitImplicit();
+		land= new LandingPage();
+		land.clickLogin();
+		land.loginPM();
+		pm_dashboard = new PM_DashboardPage();
+		pm_dashboard.clickOnTaskReport();
+		Thread.sleep(3000);
+		pm_taskReport = new PM_TaskReportPage();
+		pm_taskReport.generateReport();
+		
+  }
+  
+  //Project Manager should see employee list for the selected project.
+  @Test
+  public void AECP_PM_TC008() throws Exception {
+	  waitImplicit();
+		land= new LandingPage();
+		land.clickLogin();
+		land.loginPM();
+		pm_dashboard = new PM_DashboardPage();
+		pm_dashboard.clickOnSiteEngineer();
+		pm_engineer = new PM_EngineersPage();
+		pm_engineer.Check_SiteEngineersList();
+  }
 
 }

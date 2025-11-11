@@ -30,6 +30,10 @@ public class PM_DashboardPage extends BaseClass{
 	
 	@FindBy(xpath="//a[text()='Site Engineer']") WebElement navlink_SiteEngineer;
 	
+	@FindBy(xpath="//a[text()='Budget']") WebElement navlink_Budget;
+	
+	@FindBy(xpath="//a[text()='Task Report']") WebElement navlink_TaskReport;
+	
 	public PM_DashboardPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -72,6 +76,20 @@ public class PM_DashboardPage extends BaseClass{
 	
 	public void clickOnSiteEngineer() {
 		navlink_SiteEngineer.click();
+	}
+	
+	public void clickOnBudget() {
+		navlink_Budget.click();
+		String exp_URL="https://aecp.aecearth.io/project-admin/project-management/budget";
+		String act_URL=driver.getCurrentUrl();
+		Assert.assertEquals(act_URL, exp_URL, "Budget page is not displayed!");
+	}
+	
+	public void clickOnTaskReport() {
+		navlink_TaskReport.click();
+		String exp_URL="https://aecp.aecearth.io/project-admin/project-management/Report";
+		String act_URL=driver.getCurrentUrl();
+		Assert.assertEquals(act_URL, exp_URL, "Task Report page is not displayed!");
 	}
 
 }
