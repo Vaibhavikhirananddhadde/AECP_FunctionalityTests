@@ -140,7 +140,7 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 				project.click();
 			}
 		}
-		txt_materialTrackingNumber.sendKeys("1412");
+		txt_materialTrackingNumber.sendKeys("141256");
 		txt_deliveredTo.sendKeys("Ashwini");
 		txt_EnterCost.sendKeys("1000");
 		btn_submit.click();

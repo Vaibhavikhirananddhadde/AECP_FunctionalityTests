@@ -10,6 +10,9 @@
     <classes>
       <class name="tests.HR_Panel_Tests"/>
       <class name="tests.GM_Panel_Tests"/>
+      <class name="tests.PM_Panel_Tests"/>
+      <class name="tests.SiteEngineer_Panel_Tests"/>
+      <class name="tests.StoreManager_Panel_Tests"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
