@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import utilities.BrowserOptions;
 import utilities.UtilClass;
 
 public class BaseClass extends UtilClass{
@@ -28,7 +30,7 @@ public class BaseClass extends UtilClass{
 		    }
 		 
 	 
-	@BeforeMethod
+	/*@BeforeMethod
 	public void setUp() throws Exception {
         
 		launchBrowser(readProperty("browser", "/src/test/resources/configfiles/config.properties"));
@@ -40,7 +42,20 @@ public class BaseClass extends UtilClass{
 		getApplication(readProperty("url", "/src/test/resources/configfiles/config.properties"));
 		logger.info("Entering url in the browser");
 	
-		}
+		}*/
+	
+	   @BeforeMethod
+	    public void setUp() {
+
+	        // Get ChromeOptions from our reusable class
+	        driver = new ChromeDriver(BrowserOptions.getChromeOptions());
+
+	        // implicit wait
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+	        // open main URL
+	        driver.get("https://aecp.aecearth.io/");
+	    }
 	
 	@AfterMethod
 	public void tearDown() {

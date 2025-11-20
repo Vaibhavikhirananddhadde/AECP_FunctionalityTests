@@ -26,7 +26,7 @@ import pages.PM_TaskReportPage;
 import pages.SEng_DashboardPage;
 import pages.SEng_ResourceRequestPage;
 
-public class PM_Panel_Tests extends BaseClass{
+public class PM_Panel_Tests extends BaseClass {
 	public LandingPage land;
 	public HR_DashboardPage hr_dashboard;
 	public PM_DashboardPage pm_dashboard;
@@ -49,24 +49,24 @@ public class PM_Panel_Tests extends BaseClass{
 	public PM_BudgetPage pm_budget;
 	public PM_TaskReportPage pm_taskReport;
 	public PM_LeaveManagementPage pm_leaveManagement;
-	
-	
-	//Project Manager should see Total projects, To Do projects, In-Progress projects, Completed Tasks in the dashboard.
+
+	// Project Manager should see Total projects, To Do projects, In-Progress
+	// projects, Completed Tasks in the dashboard.
 	@Test
 	public void AECP_PM_TC001() throws Exception {
 		waitImplicit();
-		land= new LandingPage();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.checkKPIcardsDisplayed();
 	}
-	
-	//The project manager can see project details.
+
+	// The project manager can see project details.
 	@Test
 	public void AECP_PM_TC002() throws Exception {
 		waitImplicit();
-		land= new LandingPage();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
@@ -74,54 +74,60 @@ public class PM_Panel_Tests extends BaseClass{
 		pm_project = new PM_ProjectPage();
 		pm_project.checkProjectDetails();
 	}
-	
-	/*Project Manager can assign task to site engineer, general manager, store manager, HR but general manager, store manager, 
-	HR does not has Task management module - Project Manager himself update their task progress.*/
+
+	/*
+	 * Project Manager can assign task to site engineer, general manager, store
+	 * manager, HR but general manager, store manager, HR does not has Task
+	 * management module - Project Manager himself update their task progress.
+	 */
 	@Test(enabled = true)
 	public void AECP_PM_TC003() throws Exception {
 		waitImplicit();
-		land= new LandingPage();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnTask();
 		pm_task = new PM_TaskPage();
 		pm_task.addTask();
-		
+
 	}
-	
-	//Project Manager, Site engineer can request for materials Store manager & General manager approves/ rejects.
-   @Test
-   public void AECP_PM_TC004() throws Exception {
-	   waitImplicit();
-		land= new LandingPage();
+
+	// Project Manager, Site engineer can request for materials Store manager &
+	// General manager approves/ rejects.
+	@Test
+	public void AECP_PM_TC004() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnMaterialRequisition();
-		pm_materialRequest=new PM_MaterialRequestPage();
+		pm_materialRequest = new PM_MaterialRequestPage();
 		pm_materialRequest.requestMaterial();
-   }
-   
-   //Project Manager should be able to see all the engineers for the selected project.
-   @Test
-   public void AECP_PM_TC005() throws Exception {
-	   waitImplicit();
-		land= new LandingPage();
+	}
+
+	// Project Manager should be able to see all the engineers for the selected
+	// project.
+	@Test
+	public void AECP_PM_TC005() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnSiteEngineer();
 		pm_engineer = new PM_EngineersPage();
 		pm_engineer.Check_SiteEngineersList();
-		
-   }
-	
-   //Project Manager should be able to see the budget for the selected project (General manager will add budget for the project while creating the project).
-  @Test
-  public void AECP_PM_TC006() throws Exception {
-	  waitImplicit();
-		land= new LandingPage();
+
+	}
+
+	// Project Manager should be able to see the budget for the selected project
+	// (General manager will add budget for the project while creating the project).
+	@Test
+	public void AECP_PM_TC006() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
@@ -129,14 +135,14 @@ public class PM_Panel_Tests extends BaseClass{
 		Thread.sleep(3000);
 		pm_budget = new PM_BudgetPage();
 		pm_budget.checkBudgetForProject();
-		
-  }
-  
-  //Project Manager should be able to generate task report assigned to him.
-  @Test
-  public void AECP_PM_TC007() throws Exception {
-	   waitImplicit();
-		land= new LandingPage();
+
+	}
+
+	// Project Manager should be able to generate task report assigned to him.
+	@Test
+	public void AECP_PM_TC007() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
@@ -144,35 +150,34 @@ public class PM_Panel_Tests extends BaseClass{
 		Thread.sleep(3000);
 		pm_taskReport = new PM_TaskReportPage();
 		pm_taskReport.generateReport();
-		
-  }
-  
-  //Project Manager should see employee list for the selected project.
-  @Test
-  public void AECP_PM_TC008() throws Exception {
-	  waitImplicit();
-		land= new LandingPage();
+
+	}
+
+	// Project Manager should see employee list for the selected project.
+	@Test
+	public void AECP_PM_TC008() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnSiteEngineer();
 		pm_engineer = new PM_EngineersPage();
 		pm_engineer.Check_SiteEngineersList();
-  }
-  
-  // Project Manager can apply for Leave.
-  @Test
-  public void AECP_PM_TC009() throws Exception {
-	  waitImplicit();
-	  land= new LandingPage();
+	}
+
+	// Project Manager can apply for Leave.
+	@Test
+	public void AECP_PM_TC009() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnLeaveManagement();
 		pm_leaveManagement = new PM_LeaveManagementPage();
 		pm_leaveManagement.applyLeave();
-		
-	  
-  }
+
+	}
 
 }

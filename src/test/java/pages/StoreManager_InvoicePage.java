@@ -61,6 +61,7 @@ public class StoreManager_InvoicePage extends BaseClass{
 		for(WebElement entry:AllEntries) {
 			if(entry.getText().equals("All")) {
 				entry.click();
+				break;
 			}
 		}
 		

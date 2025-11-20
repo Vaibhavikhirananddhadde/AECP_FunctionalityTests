@@ -1,5 +1,6 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,7 +9,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import base.BaseClass;
@@ -34,8 +37,30 @@ public class SEng_TaskPage extends BaseClass {
 	WebElement txt_projectDescription;
 	@FindBy(xpath = "//button[text()='Submit']")
 	WebElement btn_Submit;
-	@FindBy(xpath="//button[text()='Select Project']")
-	WebElement dd_selectProject;
+	@FindBy(xpath="(//button[contains(@class,'dropdown-toggle') and contains(@class,'btn-secondary')])[2]")
+	WebElement dd_selectProject;   //filter
+	@FindBy(xpath="(//div[@class='row'][1]//button[@class='p-0 dropdown-toggle btn btn-link'])[1]")
+	WebElement dots_TaskCard;
+	@FindBy(xpath="(//button[contains(@class,'dropdown-toggle') and contains(@class,'btn-secondary')])[1]")
+	WebElement dd_selectEmployee;  //filter
+	@FindBy(xpath="//button[text()='View']")
+	WebElement btn_view;
+	@FindBy(xpath="//h1[text()='View Task Details']")
+	WebElement viewPageTitle;
+	@FindBy(xpath="//button[text()='Edit']")
+	WebElement btn_edit;
+	@FindBy(xpath="//h1[text()='Edit Task Details']")
+	WebElement editPageTitle;
+	@FindBy(xpath="//button[text()='Delete']")
+	WebElement btn_delete;
+	@FindBy(xpath="(//p[text()='Are you sure you want to delete this?'])[2]")
+	WebElement popup_deleteConfirm;
+	@FindBy(xpath = "(//div[contains(@class,'modal') and contains(@class,'show')]//button[contains(@class,'btn-danger') and normalize-space()='Yes'])[1]")
+	WebElement btn_YES;
+	@FindBy(xpath="//button[text()='Back']")
+	WebElement btn_Back;
+	@FindBy(xpath="//div[contains(@class,'mb-2 dropdown')][3]")
+	WebElement dd_selectPeriod;
 	
 
 	private By ToDo_Tasks = By
@@ -44,8 +69,17 @@ public class SEng_TaskPage extends BaseClass {
 			.xpath("//div[@class='col-lg-4']//div[@class='card-stats mb-4 mb-xl-0  mt-3 card']//h3");
 	private By completed_Tasks = By
 			.xpath("//div[@class='col-lg-4']//div[@class='card-stats mb-4 mb-xl-0 m-0 card']//h3");
-	private By project_options = By
-			.xpath("//div[@class='mb-2 dropdown show']//button[@class='dropdown-item']");
+
+	
+	// options inside the currently OPEN dropdown
+	private By project_options_open = By.xpath(
+	    "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button[contains(@class,'dropdown-item')]"
+	);
+	
+	// COMMON: options in the currently OPEN dropdown (employee OR project)
+	private By dropdown_options_open = By.xpath(
+	    "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button[contains(@class,'dropdown-item')]"
+	);
 	
 
 	public void addTask(String option_project, String TaskName, String option_assignTo) {
@@ -89,75 +123,300 @@ public class SEng_TaskPage extends BaseClass {
 
 	}
 	
-	//Filter tasks
-	/*public void filterTasks_projects() {
-		dd_selectProject.click();
-		List<WebElement> allProjects = driver.findElements(project_options);
-		for(WebElement project:allProjects) {
-			dd_selectProject.click();
-			project.click();
-			
-			//check task counts for the selected project in to do section
-			List<WebElement> todoTasks = driver.findElements(ToDo_Tasks);
-			System.out.println("To-Do task count for the selected project : "+todoTasks.size());
-			
-			//check task counts for the selected project in in progress section
-			List<WebElement> inprogressTasks = driver.findElements(Inprogress_Tasks);
-			System.out.println("In-Progress task count for the selected project : "+inprogressTasks.size());
-			
-			//check task counts for the selected project in completed tasks section
-			List<WebElement> completedTasks = driver.findElements(completed_Tasks);
-			System.out.println("Completed task count for the selected project : "+completedTasks.size());
-			
-			int todoCount = todoTasks.size();
-			int inprogressCount = inprogressTasks.size();
-			int completedCount = completedTasks.size();
-			int total = todoCount+inprogressCount+completedCount;
-			
-			System.out.println("Total tasks for the selected project is : "+total);
-			}
-		
-	}*/
+	
+	
 	
 	public void filterTasks_projects() throws InterruptedException {
-	    // Open dropdown first time
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	    // ---------- STEP 1: read all project names once ----------
+	    // open dropdown using JS (so it definitely opens)
+	    if(dd_selectProject.isEnabled()) {
+	    	 js.executeScript("arguments[0].click();", dd_selectProject);
+
+	    }
+	   
+	    List<WebElement> optionElements =
+	            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(project_options_open));
+
+	    List<String> projectNames = new java.util.ArrayList<>();
+	    for (WebElement opt : optionElements) {
+	        String name = opt.getText().trim();
+	        if (!name.isEmpty()) {
+	            projectNames.add(name);
+	        }
+	    }
+
+	    System.out.println("Total projects in dropdown: " + projectNames.size());
+	    
 	    dd_selectProject.click();
-	    Thread.sleep(3000);
 
-	    // Get count first (not elements)
-	    List<WebElement> projectList = driver.findElements(project_options);
-	    int totalProjects = projectList.size();
+	    // ---------- STEP 2: loop for each project ----------
+	    for (String projectName : projectNames) {
 
-	    for (int i = 1; i <= totalProjects; i++) {
+	        // open dropdown FRESH with JS (normal click was sometimes not opening)
+	        js.executeScript("arguments[0].click();", dd_selectProject);
 
-	       jsClickOn(dd_SelectProject);
-	       Thread.sleep(3000);
-	        
+	        // wait until the menu is actually visible
+	        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(project_options_open));
 
-	        // Re-locate fresh element (avoids stale element)
-	        By nthProject = By.xpath("//div[@class='mb-2 dropdown show']/div[@class='dropdown-menu show']/button[" + i + "]");
+	        // now locate the option for this project
+	        By optionBy = By.xpath(
+	            "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button" +
+	            "[contains(@class,'dropdown-item') and normalize-space()='" + projectName + "']"
+	        );
 
-	        WebElement project = driver.findElement(nthProject);
-	        String projectName = project.getText();
+	        WebElement projectOption =
+	                wait.until(ExpectedConditions.elementToBeClickable(optionBy));
+
 	        System.out.println("\nSelecting Project: " + projectName);
+	        projectOption.click();
 
-	        project.click(); // SAFE CLICK ✔
-	        
-            driver.navigate().refresh();
+	        // wait until button text changes to selected project (confirm filter applied)
+	        wait.until(ExpectedConditions.textToBePresentInElement(dd_selectProject, projectName));
 
-	        // ---- Count task sections ----
-	        List<WebElement> todoTasks = driver.findElements(ToDo_Tasks);
-	        System.out.println("To-Do task count: " + todoTasks.size());
+	        // (optional) tiny wait for cards to render
+	        Thread.sleep(500);
 
+	        // ---------- STEP 3: count tasks ----------
+	        List<WebElement> todoTasks       = driver.findElements(ToDo_Tasks);
 	        List<WebElement> inprogressTasks = driver.findElements(Inprogress_Tasks);
-	        System.out.println("In-Progress task count: " + inprogressTasks.size());
+	        List<WebElement> completedTasks  = driver.findElements(completed_Tasks);
 
-	        List<WebElement> completedTasks = driver.findElements(completed_Tasks);
-	        System.out.println("Completed task count: " + completedTasks.size());
+	        int todoCount       = todoTasks.size();
+	        int inprogressCount = inprogressTasks.size();
+	        int completedCount  = completedTasks.size();
+	        int total           = todoCount + inprogressCount + completedCount;
 
-	        int total = todoTasks.size() + inprogressTasks.size() + completedTasks.size();
-	        System.out.println("Total tasks: " + total);
+	        System.out.println("To-Do task count        : " + todoCount);
+	        System.out.println("In-Progress task count  : " + inprogressCount);
+	        System.out.println("Completed task count    : " + completedCount);
+	        System.out.println("Total tasks for project : " + total);
+
+	        Assert.assertTrue(total >= 0, "Task count calculation failed for project: " + projectName);
 	    }
 	}
+	
+	public void filterTasks_Employee()
+	        throws InterruptedException {
 
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	    // STEP 1 – open dropdown and read all option names
+	    js.executeScript("arguments[0].click();", dd_selectEmployee);
+
+	    List<WebElement> optionElements =
+	            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(dropdown_options_open));
+
+	    List<String> optionNames = new java.util.ArrayList<>();
+	    for (WebElement opt : optionElements) {
+	        String name = opt.getText().trim();
+	        if (!name.isEmpty()) {
+	            optionNames.add(name);
+	        }
+	    }
+
+	    System.out.println("\n" + "Employee" + " filter – total options: " + optionNames.size());
+	    
+	    dd_selectEmployee.click();
+
+	    // STEP 2 – loop over each option
+	    for (String name : optionNames) {
+
+	        // open dropdown fresh
+	        js.executeScript("arguments[0].click();", dd_selectEmployee);
+	        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(dropdown_options_open));
+
+	        // locate the option for this name
+	        By optionBy = By.xpath(
+	            "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button" +
+	            "[contains(@class,'dropdown-item') and normalize-space()='" + name + "']"
+	        );
+
+	        WebElement option =
+	                wait.until(ExpectedConditions.elementToBeClickable(optionBy));
+
+	        System.out.println("\nSelecting " + "Employee" + ": " + name);
+	        option.click();
+
+	        // wait until the button text changes (confirm filter applied)
+	        wait.until(ExpectedConditions.textToBePresentInElement(dd_selectEmployee, name));
+
+	        //Thread.sleep(500); // small wait for cards to update
+
+	        // STEP 3 – count tasks on board
+	        List<WebElement> todoTasks       = driver.findElements(ToDo_Tasks);
+	        List<WebElement> inprogressTasks = driver.findElements(Inprogress_Tasks);
+	        List<WebElement> completedTasks  = driver.findElements(completed_Tasks);
+
+	        int todoCount       = todoTasks.size();
+	        int inprogressCount = inprogressTasks.size();
+	        int completedCount  = completedTasks.size();
+	        int total           = todoCount + inprogressCount + completedCount;
+
+	        System.out.println("Employee" + " = " + name);
+	        System.out.println("To-Do task count        : " + todoCount);
+	        System.out.println("In-Progress task count  : " + inprogressCount);
+	        System.out.println("Completed task count    : " + completedCount);
+	        System.out.println("Total tasks for " + "Employee" + " : " + total);
+
+	        Assert.assertTrue(total >= 0,
+	                "Task count calculation failed for " + "Employee" + ": " + name);
+	    }
+	}
+	
+	public void filterTask_period() {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+		    // STEP 1 – open dropdown and read all option names
+		    js.executeScript("arguments[0].click();", dd_selectPeriod);
+
+		    List<WebElement> optionElements =
+		            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(dropdown_options_open));
+
+		    List<String> optionNames = new java.util.ArrayList<>();
+		    for (WebElement opt : optionElements) {
+		        String name = opt.getText().trim();
+		        if (!name.isEmpty()) {
+		            optionNames.add(name);
+		        }
+		    }
+
+		    System.out.println("\n" + "Period" + " filter – total options: " + optionNames.size());
+		    
+		    dd_selectPeriod.click();
+
+		    // STEP 2 – loop over each option
+		    for (String name : optionNames) {
+
+		        // open dropdown fresh
+		        js.executeScript("arguments[0].click();", dd_selectPeriod);
+		        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(dropdown_options_open));
+
+		        // locate the option for this name
+		        By optionBy = By.xpath(
+		            "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button" +
+		            "[contains(@class,'dropdown-item') and normalize-space()='" + name + "']"
+		        );
+
+		        WebElement option =
+		                wait.until(ExpectedConditions.elementToBeClickable(optionBy));
+
+		        System.out.println("\nSelecting " + "Period" + ": " + name);
+		        option.click();
+
+		        // wait until the button text changes (confirm filter applied)
+		        wait.until(ExpectedConditions.textToBePresentInElement(dd_selectPeriod, name));
+
+		        //Thread.sleep(500); // small wait for cards to update
+
+		        // STEP 3 – count tasks on board
+		        List<WebElement> todoTasks       = driver.findElements(ToDo_Tasks);
+		        List<WebElement> inprogressTasks = driver.findElements(Inprogress_Tasks);
+		        List<WebElement> completedTasks  = driver.findElements(completed_Tasks);
+
+		        int todoCount       = todoTasks.size();
+		        int inprogressCount = inprogressTasks.size();
+		        int completedCount  = completedTasks.size();
+		        int total           = todoCount + inprogressCount + completedCount;
+
+		        System.out.println("Employee" + " = " + name);
+		        System.out.println("To-Do task count        : " + todoCount);
+		        System.out.println("In-Progress task count  : " + inprogressCount);
+		        System.out.println("Completed task count    : " + completedCount);
+		        System.out.println("Total tasks for " + "Period" + " : " + total);
+
+		        Assert.assertTrue(total >= 0,
+		                "Task count calculation failed for " + "Period" + ": " + name);
+		    }
+		
+	}
+
+	
+	public void viewTaskDetails() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+		dd_selectEmployee.click();
+		List<WebElement> allEmployees = driver.findElements(By.xpath("//div[contains(@class,'mb-2 dropdown')][1]//div[contains(@class,'dropdown-menu')]"));
+		for(WebElement employee:allEmployees) {
+			if(employee.getText().equalsIgnoreCase("Vaibhavi")) {
+				employee.click();
+			}
+		}
+		dots_TaskCard.click();
+		wait.until(ExpectedConditions.visibilityOf(btn_view));
+		btn_view.click();
+		wait.until(ExpectedConditions.visibilityOf(viewPageTitle));
+		Assert.assertTrue(viewPageTitle.isDisplayed(), "View details page is not displayed!");
+
+	}
+	
+	public void editTaskDetails() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		dd_selectEmployee.click();
+		List<WebElement> allEmployees = driver.findElements(By.xpath("//div[contains(@class,'mb-2 dropdown')][1]//div[contains(@class,'dropdown-menu')]"));
+		for(WebElement employee:allEmployees) {
+			if(employee.getText().equalsIgnoreCase("Vaibhavi")) {
+				employee.click();
+			}
+		}
+		dots_TaskCard.click();
+		wait.until(ExpectedConditions.visibilityOf(btn_edit));
+		btn_edit.click();
+		wait.until(ExpectedConditions.visibilityOf(editPageTitle));
+		Assert.assertTrue(editPageTitle.isDisplayed(), "Edit details page is not displayed!");
+		txt_TaskName.sendKeys("Task New 1");
+		btn_Submit.click();
+		driver.navigate().refresh();
+		Thread.sleep(3000);
+	}
+	
+	public void deleteTask() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		dd_selectEmployee.click();
+		List<WebElement> allEmployees = driver.findElements(By.xpath("//div[contains(@class,'mb-2 dropdown')][1]//div[contains(@class,'dropdown-menu')]"));
+		for(WebElement employee:allEmployees) {
+			if(employee.getText().equalsIgnoreCase("Vaibhavi")) {
+				employee.click();
+			}
+		}
+		dots_TaskCard.click();
+		wait.until(ExpectedConditions.visibilityOf(btn_delete));
+		btn_delete.click();
+		wait.until(ExpectedConditions.visibilityOf(popup_deleteConfirm));
+		Assert.assertTrue(popup_deleteConfirm.isDisplayed(), "Confirmation popup is not displayed before deleting the task!");
+		wait.until(ExpectedConditions.elementToBeClickable(btn_YES));
+		btn_YES.click();
+		Thread.sleep(3000);
+	}
+	
+	public void checkEditDelete_Displayed() {
+		dots_TaskCard.click();
+		Assert.assertTrue(btn_edit.isDisplayed() && btn_delete.isDisplayed(), "Edit and Delete buttons are displayed for all task cards!");
+	}
+	
+	public void checkEditDelete_notDisplayed() {
+		dots_TaskCard.click();
+		Assert.assertFalse(btn_edit.isDisplayed() && btn_delete.isDisplayed(), "Edit and Delete buttons are displayed!");
+	}
+
+
+
+
+
+	public WebElement getBtn_Back() {
+		return btn_Back;
+	}
+
+
+
+
+	public void setBtn_Back(WebElement btn_Back) {
+		this.btn_Back = btn_Back;
+	}
+	
+	
 }

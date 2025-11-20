@@ -6,9 +6,9 @@
       <class name="tests.SiteEngineer_Panel_Tests">
         <methods>
           <include name="tearDown"/>
-          <include name="AECP_SE_TC003"/>
           <include name="setup"/>
           <include name="setUp"/>
+          <include name="AECP_SE_TC012"/>
         </methods>
       </class> <!-- tests.SiteEngineer_Panel_Tests -->
     </classes>

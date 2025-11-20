@@ -18,6 +18,8 @@ public class SEng_DashboardPage extends BaseClass{
 	@FindBy(xpath="(//span[text()='My profile'])[2]")WebElement btn_MyProfile;
 	@FindBy(xpath="(//span[text()='Logout'])[2]")WebElement btn_Logout;
 	@FindBy(xpath="//a[text()='Task']") WebElement navlink_Task;
+	@FindBy(xpath="//a[text()='Task Report']") WebElement navlink_TaskReport;
+	@FindBy(xpath="//a[text()='Labour']") WebElement navlink_labour;
 	
 	public void clickOnResourceRequest() {
 		navlink_SiteResourceRequest.click();
@@ -38,6 +40,21 @@ public class SEng_DashboardPage extends BaseClass{
 		String exp_URL = "https://aecp.aecearth.io/site-admin/site-management/task2";
 		String act_URL = driver.getCurrentUrl();
 		Assert.assertEquals(act_URL, exp_URL, "Task page is not displayed!");
+	}
+	
+	public void clickOnTaskReport() {
+		navlink_TaskReport.click();
+		String exp_URL = "https://aecp.aecearth.io/site-admin/site-management/Report2";
+		String act_URL = driver.getCurrentUrl();
+		Assert.assertEquals(act_URL, exp_URL, "Task Report page is not displayed!");
+	}
+	
+	public void clickOnLabour() {
+		navlink_labour.click();
+		String exp_URL = "https://aecp.aecearth.io/site-admin/site-management/Labour";
+		String act_URL = driver.getCurrentUrl();
+		Assert.assertEquals(act_URL, exp_URL, "Labour page is not displayed!");
+		
 	}
 
 }
