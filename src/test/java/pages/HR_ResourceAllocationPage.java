@@ -45,6 +45,12 @@ public class HR_ResourceAllocationPage extends BaseClass{
 	@FindBy(xpath="//table[@style='width: 100%;']/tbody")
 	WebElement requestDetails;
 	
+	@FindBy(xpath="//input[@placeholder='Search Resources ']")
+	WebElement txt_searchfield;
+	
+	@FindBy(xpath="//table[@class='align-items-center table-flush table']/tbody/tr[1]/td[2]")
+	WebElement td_firstRowRoleType;
+	
 	public HR_ResourceAllocationPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -119,6 +125,16 @@ public class HR_ResourceAllocationPage extends BaseClass{
 				+ "General Action Waiting for action\n"
 				+ "HR");
 
+	}
+	
+	public void searchResources() throws InterruptedException {
+		//JavascriptExecutor js= (JavascriptExecutor)driver;
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		txt_searchfield.sendKeys("General Manager");
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.visibilityOf(td_firstRowRoleType));
+		Assert.assertEquals(td_firstRowRoleType.getText().trim(), "General Manager", "Data is not getting filtered properly!");
 	}
 
 

@@ -98,5 +98,6 @@ public class HR_DashboardPage extends BaseClass{
 		navLink_HRmanagement.click();
 		navLink_Role.click();
 	}
-
+	
+	
 }

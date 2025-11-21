@@ -239,5 +239,18 @@ public class HR_Panel_Tests extends BaseClass {
 		hr_role.cancelEditRole();
 		System.out.println("Cancel Edit role is functioning well.");
 	}
+	
+	//HR can search resources in Resource List
+	@Test(groups= {"functional"})
+	public void AECP_HR_TC013() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnResourceAllocation();
+		hr_resourceAllocation= new HR_ResourceAllocationPage();
+		hr_resourceAllocation.searchResources();
+	}
 
 }
