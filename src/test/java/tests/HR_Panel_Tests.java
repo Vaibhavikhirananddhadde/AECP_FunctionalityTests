@@ -252,5 +252,94 @@ public class HR_Panel_Tests extends BaseClass {
 		hr_resourceAllocation= new HR_ResourceAllocationPage();
 		hr_resourceAllocation.searchResources();
 	}
+	
+	//HR can search leave requests in Leave List
+	@Test
+	public void AECP_HR_TC014() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnLeaveManagement();
+		hr_leaveManagement = new HR_LeaveManagementPage();
+		hr_leaveManagement.searchLeaveType("Family Care Leave");
+	}
+	
+	//HR sees leave details in 'Employees Leave Details' page.
+	@Test
+	public void AECP_HR_TC015() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnLeaveManagement();
+		hr_leaveManagement = new HR_LeaveManagementPage();
+		hr_leaveManagement.viewLeaveDetails();
+		
+	}
+	
+	//HR can delete leave requests
+	@Test
+	public void AECP_HR_TC016() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnLeaveManagement();
+		hr_leaveManagement = new HR_LeaveManagementPage();
+		hr_leaveManagement.applyLeave();
+		hr_leaveManagement.deleteLeave();
+		System.out.println("Leave request deleted successfully!");
+	}
+	
+	//Leave request does not delete if clicked on 'NO' button from confirmation message.
+	@Test
+	public void AECP_HR_TC017() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnLeaveManagement();
+		hr_leaveManagement = new HR_LeaveManagementPage();
+		hr_leaveManagement.applyLeave();
+		
+	}
+	
+	//HR can search employee name in attendance page.
+	@Test
+	public void AECP_HR_TC018() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnAttendance();
+		driver.get("https://aecp.aecearth.io/hr-admin/hr-management/attendance?");
+		Thread.sleep(3000);
+		hr_attendance = new HR_AttendancePage();
+		hr_attendance.searchEmployee("Vaibhavi");
+	}
+	
+	//Verify that all the filters are working fine in Attendance page.
+	@Test
+	public void AECP_HR_TC019() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnAttendance();
+		Thread.sleep(3000);
+		hr_attendance = new HR_AttendancePage();
+		hr_attendance.monthFilter();
+		hr_attendance.yearFilter();
+		hr_attendance.employeeFilter("Vaibhavi");
+		hr_attendance.statusFilter("online");
+	}
+	
 
 }
