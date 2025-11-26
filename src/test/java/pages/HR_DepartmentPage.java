@@ -1,11 +1,15 @@
 package pages;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import base.BaseClass;
@@ -39,6 +43,11 @@ public class HR_DepartmentPage extends BaseClass{
 	@FindBy(xpath="(//table[@class='align-items-center table-flush table']//tbody/tr//h4)[last()]")
 	WebElement rowLast_DeptName;
 	
+	@FindBy(xpath="//input[@placeholder='Search Department']")
+	WebElement txt_searchfield;
+	
+	private By rows = By.xpath("//table[@class='align-items-center table-flush table']/tbody/tr");
+	
 	public void addingDepartment() {
 		btn_Add.click();
 		txt_deptName.sendKeys("Test Department");
@@ -61,5 +70,23 @@ public class HR_DepartmentPage extends BaseClass{
 		Assert.assertNotEquals(departmentName, "Test Department", "Department has not deleted!");
 	}
 	
-
+	public void searchDepartment(String department) throws InterruptedException {
+		txt_searchfield.sendKeys(department);
+		Thread.sleep(3000);
+		
+		List<WebElement> Rows = driver.findElements(rows);
+		for(WebElement departmentRow :Rows) {
+			WebElement DepartmentName = departmentRow.findElement(By.xpath("./td[2]"));
+			
+			System.out.println("Searched department name is : "+DepartmentName.getText().trim());
+			//Assert.assertTrue(DepartmentName.isDisplayed(), "Department searching is not working..!");
+			Assert.assertEquals(DepartmentName.getText().trim(), department, "Searched department is not displayed!");
+		}
+		
+	}
+	
+	
+	
+		
+	
 }

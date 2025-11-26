@@ -667,6 +667,37 @@ public static WebDriver driver;
 	  
 	  }
 	  
+	  public boolean waitForFileDownloaded(String folderPath, String expectedFileName, int timeoutSeconds)
+		        throws InterruptedException {
+
+		    File folder = new File(folderPath);
+		    File file   = new File(folderPath + File.separator + expectedFileName);
+
+		    int elapsed = 0;
+
+		    while (elapsed < timeoutSeconds) {
+		        // file finished downloading when it exists and Chrome's temp file (.crdownload) is gone
+		        if (file.exists() && !file.getName().endsWith(".crdownload")) {
+		            System.out.println("File downloaded: " + file.getAbsolutePath());
+		            return true;
+		        }
+		        Thread.sleep(1000);  // wait 1 second
+		        elapsed++;
+		    }
+		    return false;
+		}
+		
+		public void clearDownloadFolder(String folderPath) {
+		    File folder = new File(folderPath);
+		    File[] files = folder.listFiles();
+		    if (files != null) {
+		        for (File f : files) {
+		            f.delete();
+		        }
+		    }
+		}
+
+	  
 	  public void selectFromReactDropdown(By optionsLocator, String valueToSelect) {
 		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		    int attempts = 0;

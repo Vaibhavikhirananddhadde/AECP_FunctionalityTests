@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+
 import base.BaseClass;
 import pages.GM_DashboardPage;
 import pages.GM_LeaveManagementPage;
@@ -36,7 +37,7 @@ public class HR_Panel_Tests extends BaseClass {
 	public HR_RolePage hr_role;
 
 	// HR can see ‘Total employees’, ‘OnTime’, ‘Late’, ‘Leave Requests’ count.
-	@Test
+	@Test(groups = {"smoke"})
 	public void AECP_HR_TC001() throws Exception {
 		land = new LandingPage();
 		land.clickLogin();
@@ -48,7 +49,7 @@ public class HR_Panel_Tests extends BaseClass {
 
 	// Resource Requisition - Project manager will request for resources those
 	// requests will be displayed in the HR and General manager panel.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC002() throws Exception {
 		land = new LandingPage();
 		land.clickLogin();
@@ -79,7 +80,7 @@ public class HR_Panel_Tests extends BaseClass {
 
 	// Resource Requisition - Site Engineer will request for resources those
 	// requests will be displayed in the HR and General manager panel.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC003() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -111,7 +112,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR can Approve / Reject resource requests.
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC004() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -126,7 +127,7 @@ public class HR_Panel_Tests extends BaseClass {
 	// HR - Resource requisition - click on view button - Details like Resource
 	// type, quantity, Requested By, Description, general manager action, HR action,
 	// General action should be displayed.
-	@Test
+	@Test(groups = {"unit"})
 	public void AECP_HR_TC005() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -140,7 +141,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR can apply for Leave.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC006() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -153,7 +154,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// If HR apply Leave then it should be displayed in general manager panel.
-	@Test
+	@Test(groups = {"functional", "integration"})
 	public void AECP_HR_TC007() throws Exception {
 		land = new LandingPage();
 		land.clickLogin();
@@ -175,7 +176,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR should be able to see attendance details & download.
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC008() throws Exception {
 		land = new LandingPage();
 		land.clickLogin();
@@ -188,7 +189,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR can add employee, Edit & Delete employee / Invite employee.
-	@Test
+	@Test(groups = {"functional", "unit, smoke"})
 	public void AECP_HR_TC009() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -207,7 +208,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR can Add, Delete Department.
-	@Test
+	@Test(groups = {"functional", "unit", "smoke"})
 	public void AECP_HR_TC010() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -225,7 +226,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 
 	// HR can edit Roles.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC011() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -241,7 +242,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can search resources in Resource List
-	@Test(groups= {"functional"})
+	@Test(groups= {"functional", "unit"})
 	public void AECP_HR_TC013() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -254,7 +255,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can search leave requests in Leave List
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC014() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -267,7 +268,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR sees leave details in 'Employees Leave Details' page.
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC015() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -281,7 +282,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can delete leave requests
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC016() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -296,7 +297,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//Leave request does not delete if clicked on 'NO' button from confirmation message.
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC017() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -310,7 +311,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can search employee name in attendance page.
-	@Test
+	@Test(groups = {"functional", "unit"})
 	public void AECP_HR_TC018() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -322,10 +323,11 @@ public class HR_Panel_Tests extends BaseClass {
 		Thread.sleep(3000);
 		hr_attendance = new HR_AttendancePage();
 		hr_attendance.searchEmployee("Vaibhavi");
+		
 	}
 	
 	//Verify that all the filters are working fine in Attendance page.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC019() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -335,11 +337,76 @@ public class HR_Panel_Tests extends BaseClass {
 		hr_dashboard.clickOnAttendance();
 		Thread.sleep(3000);
 		hr_attendance = new HR_AttendancePage();
-		hr_attendance.monthFilter();
-		hr_attendance.yearFilter();
+		hr_attendance.monthFilter("September");
+		hr_attendance.yearFilter("2025");
 		hr_attendance.employeeFilter("Vaibhavi");
 		hr_attendance.statusFilter("online");
 	}
 	
-
+	//Verify that proper attendance detail is displayed when date is selected from the calendar.
+	@Test(groups = {"UI"})
+	public void AECP_HR_TC020() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnAttendance();
+		hr_attendance = new HR_AttendancePage();
+		hr_attendance.selectDate_Attendance("25");
+	}
+	
+	//HR can search employee from searchfield.
+	@Test
+	public void AECP_HR_TC021() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnEmployee();
+		hr_employees = new HR_EmployeesPage();
+		hr_employees.searchEmployee("Vaibhavi");
+		
+	}
+	
+	//Employee details should be displayed properly if we click on 'View More' button.
+	@Test
+	public void AECP_HR_TC022() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnEmployee();
+		hr_employees = new HR_EmployeesPage();
+		hr_employees.viewEmployeeDetails();
+	}
+	
+	//HR can search department names by entering department name in searchfield.
+	@Test
+	public void AECP_HR_TC023() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnDepartment();
+		hr_department = new HR_DepartmentPage();
+		hr_department.searchDepartment("Test Department");
+		
+	}
+	
+	@Test
+	public void test() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginHR();
+		hr_dashboard = new HR_DashboardPage();
+		hr_dashboard.clickOnRole();
+		hr_role = new HR_RolePage();
+		hr_role.searchRole("General Manager");
+		
+	}
 }

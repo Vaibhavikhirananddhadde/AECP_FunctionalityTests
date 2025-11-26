@@ -1,7 +1,9 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +34,10 @@ public class HR_RolePage extends BaseClass{
 	@FindBy(xpath="//button[text()='Cancel']")WebElement btn_cancelUpdate;
 	
 	@FindBy(xpath="//h1[text()='Roles List']")WebElement pageHeader;
+	
+	@FindBy(xpath="//input[@placeholder='Search Role']") WebElement txt_searchfield;
+	
+	private By rolesRow = By.xpath("//table[@class='align-items-center table-flush table']/tbody/tr");
 	
 	public void editRole() {
 		txt_search.sendKeys("Project Engineer");
@@ -65,6 +71,19 @@ public class HR_RolePage extends BaseClass{
 		txt_RoleName.sendKeys("Project Engine");
 		btn_cancelUpdate.click();
 		Assert.assertTrue(pageHeader.isDisplayed(), "Role updation has not cancelled!");
+	}
+	
+	public void searchRole(String Role) throws InterruptedException {
+		txt_searchfield.sendKeys(Role);
+		Thread.sleep(3000);
+		List<WebElement> rows = driver.findElements(rolesRow);
+		for(WebElement roleRow : rows) {
+			WebElement roleName = roleRow.findElement(By.xpath("./td[1]"));
+			
+			System.out.println("Searched role is : "+roleName.getText().trim());
+			Assert.assertEquals(roleName.getText().trim(), Role, "Searched role is not displayed in Roles List!");
+		}
+		
 	}
 
 }
