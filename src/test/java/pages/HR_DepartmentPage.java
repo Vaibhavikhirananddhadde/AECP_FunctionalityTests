@@ -3,7 +3,6 @@ package pages;
 import java.time.Duration;
 import java.util.List;
 
-import org.jspecify.annotations.Nullable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,6 +45,14 @@ public class HR_DepartmentPage extends BaseClass{
 	@FindBy(xpath="//input[@placeholder='Search Department']")
 	WebElement txt_searchfield;
 	
+	private By lastDeleteIcon = By.xpath(
+		    "(//table[@class='align-items-center table-flush table']//tbody/tr//i[contains(@id,'delete-tooltip')])[last()]"
+		);
+
+		private By lastDeptName = By.xpath(
+		    "(//table[@class='align-items-center table-flush table']//tbody/tr//h4)[last()]"
+		);
+	
 	private By rows = By.xpath("//table[@class='align-items-center table-flush table']/tbody/tr");
 	
 	public void addingDepartment() {
@@ -62,12 +69,28 @@ public class HR_DepartmentPage extends BaseClass{
 		}
 		
 	}
-	public void deleteDepartment() {
-		icon_delete.click();
-		btn_YES.click();
-		driver.navigate().refresh();
-		String departmentName = rowLast_DeptName.getText();
-		Assert.assertNotEquals(departmentName, "Test Department", "Department has not deleted!");
+	public void deleteDepartment() throws InterruptedException {
+		
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+	    // 1. Click latest delete icon (fresh element)
+	    WebElement deleteIcon = wait.until(
+	            ExpectedConditions.elementToBeClickable(lastDeleteIcon)
+	    );
+	    deleteIcon.click();
+
+	    // 2. Confirm delete
+	    wait.until(ExpectedConditions.elementToBeClickable(btn_YES)).click();
+
+	    // 3. Wait for the old icon to become stale (table is reloaded)
+	    wait.until(ExpectedConditions.stalenessOf(deleteIcon));
+
+	    // 4. Optionally wait for table rows to re-appear
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(rows));
+
+	    // 5. Now read the last department name from fresh DOM
+	    String lastDept = driver.findElement(lastDeptName).getText().trim();
+	    Assert.assertNotEquals(lastDept, "Test Department", "Department has not deleted!");
 	}
 	
 	public void searchDepartment(String department) throws InterruptedException {

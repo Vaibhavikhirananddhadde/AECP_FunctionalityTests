@@ -1,5 +1,6 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -109,6 +110,7 @@ public class StoreManager_Panel_Tests extends BaseClass {
 	// Store.
 	@Test
 	public void AECP_SM_TC007() throws Exception {
+		  String productName = "AutoProduct" + System.currentTimeMillis();
 		waitImplicit();
 		land = new LandingPage();
 		land.clickLogin();
@@ -116,12 +118,13 @@ public class StoreManager_Panel_Tests extends BaseClass {
 		storeDashboard = new StoreManager_DashboardPage();
 		storeDashboard.clickOnVendorManagement();
 		vendorManagement = new StoreManager_VendorManagementPage();
-		vendorManagement.addSingleStock(100);
+		vendorManagement.addSingleStock(productName, 100);
+		
 	}
 
 	// Data matches the movements from Vendor to Store, Vendor Material Delivery,
 	// Vendor Material Return, Store to Vendor.
-	@Test
+	/*@Test
 	public void AECP_SM_TC008() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -135,6 +138,60 @@ public class StoreManager_Panel_Tests extends BaseClass {
 		vendorManagement.vendorMaterialDelivery(8);
 		vendorManagement.VendorMaterialReturn(3);
 	}
+	*/
+	
+	
+	@Test
+	public void AECP_SM_TC008_DataMovementsMatch() throws Exception {
+
+	    waitImplicit();
+	    land = new LandingPage();
+	    land.clickLogin();
+	    land.loginStore();
+
+	    storeDashboard = new StoreManager_DashboardPage();
+	    storeDashboard.clickOnVendorManagement();
+	    vendorManagement = new StoreManager_VendorManagementPage();
+
+	    // Unique product for this test
+	    String productName = "AutoProduct" + System.currentTimeMillis();
+
+	    // Quantities
+	    int qtyVendorToStore   = 100;
+	    int qtyStoreToVendor   = 5;
+	    int qtyVendorDelivery  = 8;
+	    int qtyVendorRetFromPr = 3;
+
+	    // --- 1. Perform Movements ---
+	    vendorManagement.addSingleStock(productName, qtyVendorToStore);
+	    vendorManagement.returnToVendor(productName, qtyStoreToVendor);
+	    vendorManagement.vendorMaterialDelivery(productName, qtyVendorDelivery);
+	    vendorManagement.VendorMaterialReturn(productName, qtyVendorRetFromPr);
+
+	    // Refresh
+	    driver.get("https://aecp.aecearth.io/store-admin/store-management/Vendormanagement");
+	    Thread.sleep(3000);
+
+	    // --- 2. Read UI Values ---
+	    int uiVendorToStoreQty   = vendorManagement.getVendorToStoreQty(productName);
+	    int uiStoreToVendorQty   = vendorManagement.getStoreToVendorQty(productName);
+	    int uiVendorDeliveryQty  = vendorManagement.getVendorMaterialDeliveryQty(productName);
+	    int uiVendorReturnQty    = vendorManagement.getVendorMaterialReturnQty(productName);
+	    int uiStockReportQty     = vendorManagement.getStockReportQty(productName);
+
+	    // --- 3. Assert table values ---
+	    Assert.assertEquals(uiVendorToStoreQty,  qtyVendorToStore,   "Vendor To Store mismatch");
+	    Assert.assertEquals(uiStoreToVendorQty,  qtyStoreToVendor,   "Store To Vendor mismatch");
+	    Assert.assertEquals(uiVendorDeliveryQty, qtyVendorDelivery,  "Vendor Delivery mismatch");
+	    Assert.assertEquals(uiVendorReturnQty,   qtyVendorRetFromPr, "Vendor Return mismatch");
+
+	    // --- 4. Assert stock calculation ---
+	    int expectedStock = qtyVendorToStore - qtyStoreToVendor - qtyVendorDelivery + qtyVendorRetFromPr;
+
+	    Assert.assertEquals(uiStockReportQty, expectedStock,
+	        "Stock Report current stock does not match movement calculation");
+	}
+
 
 	// Store Manager can click “Add New Waste” to record a waste item (product, qty,
 	// reason, date, location/project, disposal method, notes, attachment).

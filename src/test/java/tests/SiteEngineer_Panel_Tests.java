@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.Test;
+
 import base.BaseClass;
 import pages.LandingPage;
 import pages.PM_DashboardPage;
@@ -20,6 +21,9 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 	public PM_DashboardPage PM_dashboard;
 	public PM_TaskPage PM_task;
 	public SEng_LabourPage SE_labour;
+	
+	
+	
 
 	// Site Engineer should be able to see the project details which he involved in.
 	@Test
@@ -57,7 +61,7 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 		SE_dashboard = new SEng_DashboardPage();
 		SE_dashboard.clickOnTask();
 		SE_task = new SEng_TaskPage();
-		SE_task.filterTasks_projects();
+		SE_task.filterTasks_projects("Test Project");
 	}
 
 	// Site Engineer can filter tasks by Employee.
@@ -70,7 +74,7 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 		SE_dashboard = new SEng_DashboardPage();
 		SE_dashboard.clickOnTask();
 		SE_task = new SEng_TaskPage();
-		SE_task.filterTasks_Employee();
+		SE_task.filterTasks_Employee("Vaibhavi");
 	}
 
 	// Site Engineer can filter tasks by period.
@@ -83,7 +87,7 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 		SE_dashboard = new SEng_DashboardPage();
 		SE_dashboard.clickOnTask();
 		SE_task = new SEng_TaskPage();
-		SE_task.filterTask_period();
+		SE_task.filterTaskByPeriod("Month");
 	}
 
 	// Site Engineer can view tasks.
@@ -167,6 +171,7 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 		PM_task = new PM_TaskPage();
 		PM_task.addTask();
 		PM_dashboard.logout();
+		Thread.sleep(2000);
 
 		land = new LandingPage();
 		land.clickLogin();
@@ -174,6 +179,7 @@ public class SiteEngineer_Panel_Tests extends BaseClass {
 		SE_dashboard = new SEng_DashboardPage();
 		SE_dashboard.clickOnTask();
 		driver.get("https://aecp.aecearth.io/site-admin/site-management/task2");
+		Thread.sleep(2000);
 		SE_task = new SEng_TaskPage();
 		SE_task.checkEditDelete_notDisplayed();
 	}

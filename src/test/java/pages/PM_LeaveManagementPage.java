@@ -1,6 +1,8 @@
 package pages;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -39,13 +41,22 @@ public class PM_LeaveManagementPage extends BaseClass{
 		btn_ApplyLeave.click();
 		Select leaveTypes = new Select(dd_leaveType);
 		leaveTypes.selectByVisibleText("Sabbatical Leave");
-		date_starting.sendKeys("14/12/2025");
-		date_ending.sendKeys("13/12/2025");
+		
+		//Generate todays date & tomarrows date
+		LocalDate today = LocalDate.now();
+		LocalDate tomarrow = today.plusDays(1);
+		
+		DateTimeFormatter dateformat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		String startDate = today.format(dateformat);
+		String endDate = tomarrow.format(dateformat);
+		
+		date_starting.sendKeys(startDate);
+		date_ending.sendKeys(endDate);
 		txt_description.sendKeys("Testing applying leave");
 		btn_submit.click();
 		
-		driver.navigate().back();
-		driver.navigate().forward();
+		
 		driver.get("https://aecp.aecearth.io/project-admin/project-management/leave");
 		Thread.sleep(3000);
 	

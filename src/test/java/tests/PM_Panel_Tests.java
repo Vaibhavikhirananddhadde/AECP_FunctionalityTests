@@ -107,8 +107,7 @@ public class PM_Panel_Tests extends BaseClass {
 		pm_materialRequest.requestMaterial();
 	}
 
-	// Project Manager should be able to see all the engineers for the selected
-	// project.
+	// Project Manager should be able to see all the engineers for the selected project.
 	@Test
 	public void AECP_PM_TC005() throws Exception {
 		waitImplicit();

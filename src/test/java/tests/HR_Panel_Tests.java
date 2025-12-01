@@ -218,9 +218,9 @@ public class HR_Panel_Tests extends BaseClass {
 		hr_dashboard.clickOnDepartment();
 		hr_department = new HR_DepartmentPage();
 		hr_department.addingDepartment();
+		Thread.sleep(3000);
 		System.out.println("Department added successfully");
-		waitImplicit();
-		scrollDown();
+		//scrollDown();
 		hr_department.deleteDepartment();
 		System.out.println("Department deleted successfully");
 	}
@@ -357,7 +357,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can search employee from searchfield.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC021() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -371,7 +371,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//Employee details should be displayed properly if we click on 'View More' button.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC022() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -384,7 +384,7 @@ public class HR_Panel_Tests extends BaseClass {
 	}
 	
 	//HR can search department names by entering department name in searchfield.
-	@Test
+	@Test(groups = {"functional"})
 	public void AECP_HR_TC023() throws Exception {
 		waitImplicit();
 		land = new LandingPage();
@@ -397,7 +397,7 @@ public class HR_Panel_Tests extends BaseClass {
 		
 	}
 	
-	@Test
+	@Test(groups = {"functional"})
 	public void test() throws Exception {
 		waitImplicit();
 		land = new LandingPage();

@@ -133,6 +133,7 @@ public class GM_Panel_Tests extends BaseClass {
 		land.loginGM();
 		gm_dashboard = new GM_DashboardPage();
 		gm_dashboard.clickOnDepartment();
+		Thread.sleep(3000);
 		gm_department = new GM_DepartmentPage();
 		gm_department.checkDepartmentDisplayed();
 

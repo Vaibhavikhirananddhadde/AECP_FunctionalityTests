@@ -2,6 +2,7 @@ package pages;
 
 import java.util.List;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -94,7 +95,6 @@ public class HR_EmployeesPage extends BaseClass {
 	
 	
 	private By employeeCards = By.xpath("//div[@class='row']/div[@class='col-12 col-md-6 col-lg-4 col-xl-3']");
-	private By employeeDetails = By.xpath("//div[@class='modal-body']//tbody/tr");
 	
 
    //Add employee

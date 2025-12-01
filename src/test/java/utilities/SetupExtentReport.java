@@ -41,7 +41,7 @@ public static ExtentReports setupExtentReport() {
     extent.attachReporter(spark);
 
     spark.config().setDocumentTitle("Automation Report");
-    spark.config().setReportName("SwiftBim_Client UI Tests");
+    spark.config().setReportName("AECP_Tests");
     spark.config().setTheme(com.aventstack.extentreports.reporter.configuration.Theme.DARK);
 
     extent.setSystemInfo("OS", System.getProperty("os.name"));
