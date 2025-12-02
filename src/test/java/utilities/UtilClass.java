@@ -2,6 +2,7 @@ package utilities;
 
 
 import java.awt.AWTException;
+
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -21,6 +22,7 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -730,5 +732,28 @@ public static WebDriver driver;
 
 		    throw new RuntimeException("Failed to select '" + valueToSelect + "' due to repeated stale elements.");
 		}
+	  
+	  
+	  //for random string 
+	  public String randomString()
+	  {
+	  @SuppressWarnings("deprecation")
+	  String generatedString = RandomStringUtils.randomAlphabetic(5);
+	  return generatedString;
+	  }
+
+	  //for random number like phone number
+	  public String randomNumber(int num)
+	  {
+	  String generatedNumber = RandomStringUtils.randomNumeric(num);
+	  return generatedNumber;
+	  }
+
+	  public String randomAlphaNumeric() {
+		    String generatedString = RandomStringUtils.randomAlphabetic(3);
+		    String generatedNumber = RandomStringUtils.randomNumeric(3);
+		    return generatedString + generatedNumber;
+		}
+
 
 }

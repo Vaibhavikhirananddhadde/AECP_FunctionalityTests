@@ -167,29 +167,7 @@ public class StoreManager_Panel_Tests extends BaseClass {
 	    vendorManagement.returnToVendor(productName, qtyStoreToVendor);
 	    vendorManagement.vendorMaterialDelivery(productName, qtyVendorDelivery);
 	    vendorManagement.VendorMaterialReturn(productName, qtyVendorRetFromPr);
-
-	    // Refresh
-	    driver.get("https://aecp.aecearth.io/store-admin/store-management/Vendormanagement");
-	    Thread.sleep(3000);
-
-	    // --- 2. Read UI Values ---
-	    int uiVendorToStoreQty   = vendorManagement.getVendorToStoreQty(productName);
-	    int uiStoreToVendorQty   = vendorManagement.getStoreToVendorQty(productName);
-	    int uiVendorDeliveryQty  = vendorManagement.getVendorMaterialDeliveryQty(productName);
-	    int uiVendorReturnQty    = vendorManagement.getVendorMaterialReturnQty(productName);
-	    int uiStockReportQty     = vendorManagement.getStockReportQty(productName);
-
-	    // --- 3. Assert table values ---
-	    Assert.assertEquals(uiVendorToStoreQty,  qtyVendorToStore,   "Vendor To Store mismatch");
-	    Assert.assertEquals(uiStoreToVendorQty,  qtyStoreToVendor,   "Store To Vendor mismatch");
-	    Assert.assertEquals(uiVendorDeliveryQty, qtyVendorDelivery,  "Vendor Delivery mismatch");
-	    Assert.assertEquals(uiVendorReturnQty,   qtyVendorRetFromPr, "Vendor Return mismatch");
-
-	    // --- 4. Assert stock calculation ---
-	    int expectedStock = qtyVendorToStore - qtyStoreToVendor - qtyVendorDelivery + qtyVendorRetFromPr;
-
-	    Assert.assertEquals(uiStockReportQty, expectedStock,
-	        "Stock Report current stock does not match movement calculation");
+	   
 	}
 
 

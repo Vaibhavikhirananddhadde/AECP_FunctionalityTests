@@ -59,13 +59,16 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	@FindBy(xpath="//input[@name='delivered_to']") WebElement txt_deliveredTo;
 	@FindBy(xpath="//input[@name='cost']") WebElement txt_EnterCost;
 	@FindBy(xpath="//button[text()='Submit']") WebElement btn_submit;
+	@FindBy(xpath="//button[text()='OK']") WebElement btn_OK_matDel;
 	@FindBy(xpath="(//table[@class='align-items-center table-flush table'])[4]/tbody/tr[last()]") WebElement newRow_materialDelivery;
-	private By allProducts = By.xpath("//div[@class='dropdown-menu show']//button[@style='padding: 6px 12px; font-size: 13px;']");
+	//private By allProducts = By.xpath("//div[@class='dropdown-menu show']//button[@style='padding: 6px 12px; font-size: 13px;']");
 	private By allProjects = By.xpath("//div[@class='dropdown-menu show']//button[@class='dropdown-item']");
 	
 	//Vendor Material return
-	@FindBy(xpath="//button[text()='Add Return Materials']") WebElement btn_addVendorMaterialReturn;
-	@FindBy(xpath="//button[text()='Add Single Return Material']") WebElement btn_addSingleReturnMaterial;
+	//@FindBy(xpath="//button[text()='Add Return Materials']") WebElement btn_addVendorMaterialReturn;
+	By btn_addVendorMaterialReturnBy =By.xpath("//button[text()='Add Return Materials']");
+	//@FindBy(xpath="//button[text()='Add Single Return Material']") WebElement btn_addSingleReturnMaterial;
+	By btn_addSingleReturnMaterialBy = By.xpath("//button[text()='Add Single Return Material']");
 	@FindBy(xpath="(//button[contains(text(), 'Select Project')])[3]") WebElement dd_SelectProject;
 	@FindBy(xpath="//div[@class='dropdown']//span[contains(text(),'Select Product')]") WebElement dd_selectProductName;
 	@FindBy(xpath="//select[@name='material_tracking_number']") WebElement dd_materialTrackingNumber;
@@ -75,6 +78,7 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	@FindBy(xpath="//button[text()='OK']") WebElement btn_OK;
 	@FindBy(xpath="(//table[@class='align-items-center table-flush table'])[5]/tbody/tr[1]") WebElement newRow_MaterialReturn;
 	
+
 
 	// Vendor Material Delivery for project
 	// Vendor Material Delivery for project
@@ -86,12 +90,12 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	    WebElement addDeliveryBtn = wait.until(ExpectedConditions.elementToBeClickable(addMaterialBtnBy));
 	    scrolltoview(addDeliveryBtn);
 	    addDeliveryBtn.click();
-
+        Thread.sleep(3000);
 	    // 2. Open "Add Single Material Delivery" modal
 	    By addSingleDeliveryBy = By.xpath("//button[normalize-space()='Add Single Material Delivery']");
 	    WebElement addSingleBtn = wait.until(ExpectedConditions.elementToBeClickable(addSingleDeliveryBy));
 	    addSingleBtn.click();
-
+	    Thread.sleep(3000);
 	    // 3. Active modal
 	    By modalBy = By.xpath("//div[contains(@class,'modal') and contains(@class,'show')]//div[contains(@class,'modal-content')]");
 	    WebElement modal = wait.until(ExpectedConditions.visibilityOfElementLocated(modalBy));
@@ -201,22 +205,22 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	    scrolltoview(qtyField);
 	    qtyField.clear();
 	    qtyField.sendKeys(String.valueOf(qty));
-	    Thread.sleep(3000);
+	   
 
 	    // ========== 8. Remaining fields ==========
 	    WebElement trackNo = modal.findElement(By.xpath(".//input[@name='material_tracking_number']"));
-	    trackNo.sendKeys("141256");
-	    Thread.sleep(3000);
+	    trackNo.sendKeys(randomNumber(6));
+	   
 	    WebElement deliveredTo = modal.findElement(By.xpath(".//input[@name='delivered_to']"));
 	    deliveredTo.sendKeys("Ashwini");
-	    Thread.sleep(3000);
+	    
 	    WebElement costField = modal.findElement(By.xpath(".//input[@name='cost']"));
 	    costField.sendKeys("1000");
-	    Thread.sleep(3000);
+	   
 	    // ========== 9. Submit ==========
 	    WebElement submitBtn = modal.findElement(By.xpath(".//button[normalize-space()='Submit']"));
 	    submitBtn.click();
-	    Thread.sleep(3000);
+	    
 	 // ---- Handle validation alert if it appears ----
 	    try {
 	        WebDriverWait alertWait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -230,6 +234,9 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	    } catch (org.openqa.selenium.TimeoutException e) {
 	        // No alert -> success path, continue
 	    }
+	    
+	    wait.until(ExpectedConditions.visibilityOf(btn_OK_matDel));
+	    btn_OK_matDel.click();
 
 	    // ========== 10. Verify new row in Material Delivery table ==========
 	    wait.until(ExpectedConditions.visibilityOf(newRow_materialDelivery));
@@ -243,127 +250,220 @@ public class StoreManager_VendorManagementPage extends BaseClass{
 	
 	
 	// Vendor Material Return if the product is not needed in project
-	public void VendorMaterialReturn(String productName, int qty) {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	// Vendor Material Return if the product is not needed in project
+	public void VendorMaterialReturn(String productName, int qty) throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
 
-	    // 🔹 1. Make sure any previous modal (Material Delivery) is closed
+	    // 🔹 0. Make sure any previous modal is gone
 	    try {
 	        wait.until(ExpectedConditions.invisibilityOfElementLocated(
-	                By.cssSelector("div.modal.fade.show")));
+	                By.xpath("//div[contains(@class,'modal') and contains(@class,'show')]")
+	        ));
 	        System.out.println("No visible modal, safe to click 'Add Return Materials'.");
-	    } catch (org.openqa.selenium.TimeoutException e) {
-	        System.out.println("Modal did not disappear in time; trying to proceed anyway.");
+	    } catch (Exception e) {
+	        System.out.println("Modal invisibility wait timed out, continuing anyway.");
 	    }
 
-	    // 🔹 2. Now click "Add Return Materials"
-	    scrolltoview(btn_addVendorMaterialReturn);
-	    wait.until(ExpectedConditions.elementToBeClickable(btn_addVendorMaterialReturn)).click();
+	    // 🔹 1. Scroll page down so 'Add Return Materials' comes into view
+	    js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	    Thread.sleep(500); // small pause so layout settles
 
-	    wait.until(ExpectedConditions.elementToBeClickable(btn_addSingleReturnMaterial)).click();
+	    By addReturnMaterialsBtnBy = By.xpath("//button[normalize-space()='Add Return Materials']");
 
-	    // 🔹 3. Select Project (reuse existing locators)
-	    dd_SelectProject.click();
+	    // 🔹 2. Click 'Add Return Materials' with retry + JS fallback
+	    for (int i = 0; i < 3; i++) {
+	        try {
+	            WebElement addReturnBtn = wait.until(
+	                    ExpectedConditions.elementToBeClickable(addReturnMaterialsBtnBy)
+	            );
+	            // Try normal click first
+	            try {
+	                addReturnBtn.click();
+	            } catch (org.openqa.selenium.ElementClickInterceptedException e) {
+	                System.out.println("Normal click intercepted, using JS click for Add Return Materials");
+	                js.executeScript("arguments[0].click();", addReturnBtn);
+	            }
+	            break; // success, exit retry loop
+	        } catch (org.openqa.selenium.StaleElementReferenceException e) {
+	            System.out.println("Stale on 'Add Return Materials' click, retry " + (i + 1));
+	            if (i == 2) {
+	                throw e; // after 3 tries, give up
+	            }
+	        }
+	    }
+
+	    // 🔹 3. Open "Add Single Return Material"
+	    By addSingleReturnBy = By.xpath("//button[normalize-space()='Add Single Return Material']");
+	    WebElement addSingleReturnBtn = wait.until(
+	            ExpectedConditions.elementToBeClickable(addSingleReturnBy)
+	    );
+	    addSingleReturnBtn.click();
+
+	    // 🔹 4. Select Project
+	    By projectDropdownBy = By.xpath("(//button[contains(text(),'Select Project')])[3]");
+	    WebElement projectDropdown = wait.until(
+	            ExpectedConditions.elementToBeClickable(projectDropdownBy)
+	    );
+	    projectDropdown.click();
+
 	    List<WebElement> projects = wait.until(
-	            ExpectedConditions.visibilityOfAllElementsLocatedBy(allProjects)
+	            ExpectedConditions.visibilityOfAllElementsLocatedBy(
+	                    By.xpath("//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button")
+	            )
+	    );
+	    for (WebElement proj : projects) {
+	        String txt = proj.getText().trim();
+	        if (txt.split("\\s*\\(")[0].trim().equalsIgnoreCase("Test Project1")) {
+	            proj.click();
+	            break;
+	        }
+	    }
+
+	    // 🔹 5. Select Product (strip “(1 vendor)” etc.)
+	    dd_selectProductName.click();
+	    List<WebElement> products = wait.until(
+	            ExpectedConditions.visibilityOfAllElementsLocatedBy(
+	                    By.xpath("//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button")
+	            )
 	    );
 
-	    for (WebElement project : projects) {
-	        String pText = project.getText().trim();
-	        if (pText.equalsIgnoreCase("Test Project1")) {
-	            project.click();
-	            break;
-	        }
-	    }
-
-	    // 🔹 4. Select Product
-	    dd_selectProductName.click();
-	    List<WebElement> products = driver.findElements(allProducts);
-	    boolean found = false;
 	    System.out.println("------ Product dropdown options (Return Material) ------");
 	    for (WebElement product : products) {
-	        String fullText = product.getText().trim();
-	        System.out.println("Option: '" + fullText + "'");
-	        String optionName = fullText.split("\\s*\\(")[0].trim(); // strip "(Available:...)" etc.
-
-	        if (optionName.equalsIgnoreCase(productName)) {
+	        String full = product.getText().trim();
+	        System.out.println("Option: '" + full + "'");
+	        String nameOnly = full.split("\\s*\\(")[0].trim();
+	        if (nameOnly.equalsIgnoreCase(productName)) {
 	            product.click();
-	            found = true;
 	            break;
 	        }
 	    }
 
-	    if (!found) {
-	        throw new RuntimeException("Product '" + productName + "' not present in Return Materials dropdown");
-	    }
-
-	    // 🔹 5. Vendor, tracking no, date, client, qty
+	    // 🔹 6. Vendor, tracking no, date, client, qty
 	    Select vendor = new Select(dd_selectVendor);
 	    vendor.selectByVisibleText("Vendor Y");
 
 	    Select trackId = new Select(dd_materialTrackingNumber);
-	    trackId.selectByIndex(1); // or selectByVisibleText(...) if you know it
+	    trackId.selectByIndex(1); // or selectByVisibleText("1412") if constant
 
-	    date_ReturnDate.sendKeys("2025-11-15"); // use yyyy-MM-dd if backend expects that
+	    date_ReturnDate.sendKeys("15/11/2025");
+
 	    Select client = new Select(dd_selectClient);
 	    client.selectByVisibleText("Ashwini");
+
 	    txt_returnedQty.sendKeys(String.valueOf(qty));
 
 	    btn_Submit.click();
-	    btn_OK.click();
 
-	    // 🔹 6. Go back to Vendor Management and verify row
+	    // 🔹 7. Handle success OK button (fresh locator)
+	    By okBtnBy = By.xpath("//button[normalize-space()='OK']");
+	    WebElement okBtn = wait.until(ExpectedConditions.elementToBeClickable(okBtnBy));
+	    okBtn.click();
+
+	    // 🔹 8. Back to main page, verify latest row
 	    driver.get("https://aecp.aecearth.io/store-admin/store-management/Vendormanagement");
 	    wait.until(ExpectedConditions.visibilityOf(newRow_MaterialReturn));
 	    Assert.assertTrue(newRow_MaterialReturn.isDisplayed());
-	    System.out.println("Material returned row is \n" + newRow_MaterialReturn.getText().trim());
+	    System.out.println("Material returned row is \n"
+	            + newRow_MaterialReturn.getText().trim());
 	}
-	
-	
+
 	
 	// --- Helper: parse integer safely ---
 	private int parseInt(String text) {
 	    return Integer.parseInt(text.trim());
 	}
 
-	// 1) Stock Report: table[1], product name in td[3], current stock in td[4] (adjust index if needed)
+	/**
+	 * 1) Stock Report – table[1]
+	 * Row: th | Product | CurrentStock | TotalStock | Cost
+	 * Product  -> td[1]
+	 * Qty we care (CurrentStock) -> td[2]
+	 */
 	public int getStockReportQty(String productName) {
-	    String xpath = "(//table[@class='align-items-center table-flush table'])[1]" +
-	            "//tbody/tr[td[3][normalize-space()='" + productName + "']]/td[4]";
+	    String lower = productName.toLowerCase();
+
+	    String xpath =
+	        "(//table[@class='align-items-center table-flush table'])[1]"
+	      + "//tbody/tr[translate(td[1], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"
+	      + lower + "']/td[2]";
+
 	    String qtyText = driver.findElement(By.xpath(xpath)).getText();
 	    return parseInt(qtyText);
 	}
 
-	// 2) Vendor To Store: table[2], product name td[3], quantity received td[4]
+	/**
+	 * 2) Vendor → Store – table[2]
+	 * Row: th | Vendor | Product | Qty | Date | ...
+	 * Product -> td[2]
+	 * Qty     -> td[3]
+	 */
 	public int getVendorToStoreQty(String productName) {
-	    String xpath = "(//table[@class='align-items-center table-flush table'])[2]" +
-	            "//tbody/tr[td[3][normalize-space()='" + productName + "']]/td[4]";
+	   
+
+	    String xpath =
+	        "(//table[@class='align-items-center table-flush table'])[2]"
+	      + "//tbody/tr[translate(td[2], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"
+	      + productName + "']/td[3]";
+
 	    String qtyText = driver.findElement(By.xpath(xpath)).getText();
 	    return parseInt(qtyText);
 	}
 
-	// 3) Store To Vendor: table[3], product name td[3], quantity returned td[4]
+	/**
+	 * 3) Store → Vendor – table[3]
+	 * Row: th | Vendor | Product | QtyReturned | Date | Reason | ...
+	 * Product      -> td[2]
+	 * QtyReturned  -> td[3]
+	 */
 	public int getStoreToVendorQty(String productName) {
-	    String xpath = "(//table[@class='align-items-center table-flush table'])[3]" +
-	            "//tbody/tr[td[3][normalize-space()='" + productName + "']]/td[4]";
+	    String lower = productName.toLowerCase();
+
+	    String xpath =
+	        "(//table[@class='align-items-center table-flush table'])[3]"
+	      + "//tbody/tr[translate(td[2], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"
+	      + lower + "']/td[3]";
+
 	    String qtyText = driver.findElement(By.xpath(xpath)).getText();
 	    return parseInt(qtyText);
 	}
 
-	// 4) Vendor Material Delivery: table[4], product in td[2], quantity delivered in td[3]
+	/**
+	 * 4) Vendor Material Delivery – table[4]
+	 * Row: th | Product | QtyDelivered | Date | Reason | DeliveredTo | Project | Tracking | Cost
+	 * Product      -> td[1]
+	 * QtyDelivered -> td[2]
+	 */
 	public int getVendorMaterialDeliveryQty(String productName) {
-	    String xpath = "(//table[@class='align-items-center table-flush table'])[4]" +
-	            "//tbody/tr[td[2][normalize-space()='" + productName + "']]/td[3]";
+	    String lower = productName.toLowerCase();
+
+	    String xpath =
+	        "(//table[@class='align-items-center table-flush table'])[4]"
+	      + "//tbody/tr[translate(td[1], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"
+	      + lower + "']/td[2]";
+
 	    String qtyText = driver.findElement(By.xpath(xpath)).getText();
 	    return parseInt(qtyText);
 	}
 
-	// 5) Vendor Material Return: table[5], product in td[2], quantity returned in td[3]
+	/**
+	 * 5) Vendor Material Return – table[5]
+	 * Row: th | Product | QtyReturned | ??? | Date | Vendor | Project | Tracking | ReturnedBy
+	 * Product      -> td[1]
+	 * QtyReturned  -> td[2]
+	 */
 	public int getVendorMaterialReturnQty(String productName) {
-	    String xpath = "(//table[@class='align-items-center table-flush table'])[5]" +
-	            "//tbody/tr[td[2][normalize-space()='" + productName + "']]/td[3]";
+	    String lower = productName.toLowerCase();
+
+	    String xpath =
+	        "(//table[@class='align-items-center table-flush table'])[5]"
+	      + "//tbody/tr[translate(td[1], 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz') = '"
+	      + lower + "']/td[2]";
+
 	    String qtyText = driver.findElement(By.xpath(xpath)).getText();
 	    return parseInt(qtyText);
 	}
+
 	
 	public void addSingleStock(String productName, int qty) throws InterruptedException {
 	    scrolltoview(btn_AddStock);

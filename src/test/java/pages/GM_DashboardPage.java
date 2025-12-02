@@ -1,7 +1,9 @@
 package pages;
 
 import java.time.Duration;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -32,6 +34,8 @@ public class GM_DashboardPage extends BaseClass{
 	@FindBy(xpath="//a[text()='Budget']") WebElement navlink_Budget;
 	
 	@FindBy(xpath="//a[text()='Department']") WebElement navlink_department;
+	
+	@FindBy(xpath="//div[@class='header-body']//div[@class='col-lg-6 col-xl-4']") List<WebElement> KPI_cards;
 	
 	
 	public GM_DashboardPage() {
@@ -76,6 +80,16 @@ public class GM_DashboardPage extends BaseClass{
 		String exp_URL = "https://aecp.aecearth.io/general-admin/general-management/department";
 		String act_URL=driver.getCurrentUrl();
 		Assert.assertEquals(act_URL, exp_URL, "Department page is not displayed!");
+	}
+	
+	public void cardsDisplayed() {
+		for(WebElement card:KPI_cards) {
+			WebElement cardTitle= card.findElement(By.xpath(".//div[@class='h4 mb-0 card-title']"));
+			WebElement cardCount = card.findElement(By.xpath(".//span[@class='h2 font-weight-bold  ml-3']"));
+			
+			System.out.println("The Number of "+cardTitle.getText()+" is : "+cardCount.getText());
+			Assert.assertTrue(card.isDisplayed(), "Card is not displayed!..");
+		}
 	}
 
 	

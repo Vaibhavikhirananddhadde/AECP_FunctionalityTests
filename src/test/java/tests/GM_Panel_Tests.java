@@ -138,5 +138,82 @@ public class GM_Panel_Tests extends BaseClass {
 		gm_department.checkDepartmentDisplayed();
 
 	}
+	
+	//KPI cards should be displayed with proper count in General manager panel.
+	@Test
+	public void AECP_GM_TC009() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.cardsDisplayed();
+	}
+	
+	//General manager should be able to search for the required count by his name.
+	@Test
+	public void AECP_GM_TC010() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnClient();
+		gm_clientpage = new GM_ClientPage();
+		gm_clientpage.searchClient("Test ASIiiiii");
+	}
+	
+	//General manager can edit the client details.
+	@Test
+	public void AECP_GM_TC011() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnClient();
+		gm_clientpage = new GM_ClientPage();
+		gm_clientpage.editClientDetails("Test Client A", "Test Client A");
+	}
+	
+	//General manager can delete client.
+	@Test
+	public void AECP_GM_TC012() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnClient();
+		gm_clientpage = new GM_ClientPage();
+		gm_clientpage.deleteClient();
+	}
+	
+	//Placeholder should present for each textfield in 'Add Client' form.
+	@Test
+	public void AECP_GM_TC013() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnClient();
+		gm_clientpage = new GM_ClientPage();
+		gm_clientpage.checkPlaceholderAddClient();
+	}
+	
+	//Placeholder should present for each textfield in 'Add Project' form.
+	@Test
+	public void AECP_GM_TC014() throws Exception {
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnProject();
+		gm_projects = new GM_ProjectsPage();
+		gm_projects.checkPlaceholder();
+	}
 
+	
 }

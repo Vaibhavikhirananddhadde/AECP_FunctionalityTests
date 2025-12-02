@@ -79,7 +79,6 @@ public class GM_ProjectsPage extends BaseClass{
 		
 		// 2) Select Member (React dropdown)
 	    // -----------------------------
-	   //driver.findElement(By.xpath("(//div[@class='react-select__indicators css-1wy0on6'])[2]")).click();
 	  
 	   dd_selectMembers.click();
 	    selectFromReactDropdown(
@@ -97,6 +96,18 @@ public class GM_ProjectsPage extends BaseClass{
 		upload_documents.sendKeys("/Users/admin/Downloads/attendance_list.xlsx");
 		btn_Submit.click();
 
+	}
+	
+	public void checkPlaceholder() {
+		btn_addProject.click();
+		String placeholder_projectName = txt_projectName.getAttribute("placeholder");
+		System.out.println(placeholder_projectName);
+		
+		String placeholder_budget = txt_projectBudget.getAttribute("placeholder");
+		System.out.println(placeholder_budget);
+		
+		String placeholder_location = txt_location.getAttribute("placeholder");
+		System.out.println(placeholder_location);
 	}
 
 }
