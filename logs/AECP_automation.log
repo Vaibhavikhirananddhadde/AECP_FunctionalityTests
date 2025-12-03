@@ -1,0 +1,827 @@
+[2025-12-03 10:48:18] [INFO ] [Utils] - [TestNG] Running:
+  /Users/admin/Desktop/Automation/AECP_FunctionalityTests/testngLogging.xml
+
+[2025-12-03 11:05:23] [INFO ] [Utils] - [TestNG] Running:
+  /Users/admin/Desktop/Automation/AECP_FunctionalityTests/testngLogging.xml
+
+[2025-12-03 11:05:23] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 11:05:29] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 11:05:29] [INFO ] [StoreManager_Panel_Tests] - ===== AECP_SM_TC001: GM can approve resource requests =====
+[2025-12-03 11:05:29] [INFO ] [StoreManager_Panel_Tests] - Clicking Login
+[2025-12-03 11:05:33] [INFO ] [StoreManager_Panel_Tests] - Logging in as store manager
+[2025-12-03 11:05:33] [INFO ] [StoreManager_Panel_Tests] - Navigating to Store Management page
+[2025-12-03 11:05:33] [INFO ] [StoreManager_Panel_Tests] - Adding single inhouse stock
+[2025-12-03 11:05:38] [INFO ] [StoreManager_Panel_Tests] - AECP_GM_TC001 completed successfully
+[2025-12-03 11:05:38] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 11:05:38] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 11:05:38] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 7 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:30:05] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse-851410582/testng-customsuite.xml
+
+[2025-12-03 12:30:05] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 12:30:05] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 12:30:20] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 12:30:20] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC015 test====
+[2025-12-03 12:30:20] [INFO ] [GM_Panel_Tests] - Login as General manager
+[2025-12-03 12:30:23] [INFO ] [GM_Panel_Tests] - Navigating to Employee page
+[2025-12-03 12:30:23] [INFO ] [GM_DashboardPage] - Clicking on Employee from side bar
+[2025-12-03 12:30:23] [INFO ] [GM_Panel_Tests] - Search employee by his name
+[2025-12-03 12:30:23] [INFO ] [GM_EmployeePage] - Entering Employee name in searchfield
+[2025-12-03 12:30:24] [INFO ] [GM_EmployeePage] - Cheching if searched employee is filtered in the table.
+[2025-12-03 12:30:24] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 12:30:24] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 12:30:24] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@76c548f: 41 ms
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@23202c31: 9 ms
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@359ff4d9: 6 ms
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@b965857: 7 ms
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@7495699f: 6 ms
+[2025-12-03 12:30:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@7c2312fa: 0 ms
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 7 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 7 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 12:31:39] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--9182407/testng-customsuite.xml
+
+[2025-12-03 12:31:39] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 12:31:39] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 12:31:44] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 12:31:44] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC015 test====
+[2025-12-03 12:31:45] [INFO ] [GM_Panel_Tests] - Login as General manager
+[2025-12-03 12:31:48] [INFO ] [GM_Panel_Tests] - Navigating to Employee page
+[2025-12-03 12:31:48] [INFO ] [GM_DashboardPage] - Clicking on Employee from side bar
+[2025-12-03 12:31:48] [INFO ] [GM_Panel_Tests] - Search employee by his name
+[2025-12-03 12:31:48] [INFO ] [GM_EmployeePage] - Entering Employee name in searchfield
+[2025-12-03 12:31:49] [INFO ] [GM_EmployeePage] - Cheching if searched employee is filtered in the table.
+[2025-12-03 12:31:49] [INFO ] [GM_EmployeePage] - Searched employee name is filtered in the table successfully.
+[2025-12-03 12:31:49] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC015 test====
+[2025-12-03 12:31:49] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 12:31:49] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 12:31:49] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@7a5b769b: 39 ms
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@34e20e6b: 1 ms
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@38eb2c50: 6 ms
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@3cec79d3: 4 ms
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@7c1812b3: 2 ms
+[2025-12-03 12:31:50] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@43034809: 0 ms
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 4 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:15:11] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--4442303/testng-customsuite.xml
+
+[2025-12-03 13:15:11] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 13:15:11] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 13:15:19] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 13:15:19] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 13:15:19] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 13:15:23] [INFO ] [GM_Panel_Tests] - Checking page header is displayed for all the pages
+[2025-12-03 13:15:23] [INFO ] [GM_DashboardPage] - Check page header is displayed for client page
+[2025-12-03 13:15:23] [INFO ] [GM_DashboardPage] - Check page header is displayed for project page
+[2025-12-03 13:15:23] [INFO ] [GM_DashboardPage] - Check page header is displayed for employee page
+[2025-12-03 13:15:23] [INFO ] [GM_DashboardPage] - Check page header is displayed for department page
+[2025-12-03 13:15:23] [INFO ] [GM_DashboardPage] - Check page header is displayed for Budget page
+[2025-12-03 13:16:23] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 13:16:23] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 13:16:24] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@1046498a: 37 ms
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@36b310aa: 9 ms
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@173f73e7: 6 ms
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@5ff90645: 5 ms
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@5533dc72: 4 ms
+[2025-12-03 13:16:24] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@7c447c76: 1 ms
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:24:11] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse-1725182435/testng-customsuite.xml
+
+[2025-12-03 13:24:11] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 13:24:11] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 13:24:17] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 13:24:17] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 13:24:17] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 13:24:21] [INFO ] [GM_Panel_Tests] - Checking page header is displayed for all the pages
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Checking page headers for GM navigation links
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Navigating to Client page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Client page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Navigating to Project page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Project page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Navigating to Employee page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Employee page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Navigating to Department page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Department page
+[2025-12-03 13:24:21] [INFO ] [GM_DashboardPage] - Navigating to Budget page
+[2025-12-03 13:25:21] [ERROR] [GM_DashboardPage] - ❌ Error checking header for Budget page: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[normalize-space()='Budget Details']"}
+  (Session info: chrome=142.0.7444.177)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
+Build info: version: '4.36.0', revision: '6d115cfd87'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.7.6', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1947337715734af671adac09d3fc853a, findElement {using=xpath, value=//h1[normalize-space()='Budget Details']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 142.0.7444.177, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: /var/folders/70/t21qg8g92ln...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54115}, goog:processID: 4699, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54115/devtoo..., se:cdpVersion: 142.0.7444.177, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1947337715734af671adac09d3fc853a
+[2025-12-03 13:25:21] [INFO ] [GM_DashboardPage] - Navigating to Material Approval page
+[2025-12-03 13:25:21] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Material Approval page
+[2025-12-03 13:25:21] [INFO ] [GM_DashboardPage] - Navigating to Resource Approval page
+[2025-12-03 13:25:22] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Resource Approval page
+[2025-12-03 13:25:22] [INFO ] [GM_DashboardPage] - Navigating to Leave Management page
+[2025-12-03 13:25:22] [INFO ] [GM_DashboardPage] - ✅ Header is displayed for Leave Management page
+[2025-12-03 13:25:22] [INFO ] [GM_DashboardPage] - Finished checking all page headers
+[2025-12-03 13:25:22] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC016 test====
+[2025-12-03 13:25:22] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 13:25:22] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 13:25:22] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@36fcf6c0: 37 ms
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@2d23faef: 1 ms
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@fca387: 5 ms
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@3effd4f3: 3 ms
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@eb507b9: 2 ms
+[2025-12-03 13:25:22] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@390877d2: 0 ms
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 9 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:28:33] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--1426712847/testng-customsuite.xml
+
+[2025-12-03 13:28:33] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 13:28:33] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 13:28:39] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 13:28:39] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 13:28:39] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 13:28:43] [INFO ] [GM_Panel_Tests] - Checking page header is displayed for all the pages
+[2025-12-03 13:28:43] [INFO ] [GM_DashboardPage] - Check page header is displayed for client page
+[2025-12-03 13:28:43] [INFO ] [GM_DashboardPage] - Check page header is displayed for project page
+[2025-12-03 13:28:43] [INFO ] [GM_DashboardPage] - Check page header is displayed for employee page
+[2025-12-03 13:28:43] [INFO ] [GM_DashboardPage] - Check page header is displayed for department page
+[2025-12-03 13:28:44] [INFO ] [GM_DashboardPage] - Check page header is displayed for Budget page
+[2025-12-03 13:29:44] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 13:29:44] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 13:29:44] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@243f003c: 41 ms
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@76c387f9: 8 ms
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@43a51d00: 8 ms
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@387bf2d9: 5 ms
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@7c447c76: 8 ms
+[2025-12-03 13:29:44] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@64fc097e: 0 ms
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 4 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 8 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 13:39:35] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--309047417/testng-customsuite.xml
+
+[2025-12-03 13:39:35] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 2 ms.
+[2025-12-03 13:39:35] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 13:39:42] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 13:39:42] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 13:39:42] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 13:39:46] [INFO ] [GM_Panel_Tests] - Checking page header is displayed for all the pages
+[2025-12-03 13:39:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for client page
+[2025-12-03 13:39:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for project page
+[2025-12-03 13:39:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for employee page
+[2025-12-03 13:39:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for department page
+[2025-12-03 13:39:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for Budget page
+[2025-12-03 13:40:46] [WARN ] [GM_DashboardPage] - Budget title is NOT displayed
+[2025-12-03 13:40:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for Material Approval page
+[2025-12-03 13:40:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for Resource Approval page
+[2025-12-03 13:40:46] [INFO ] [GM_DashboardPage] - Check page header is displayed for Leave Management page
+[2025-12-03 13:40:47] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC016 test====
+[2025-12-03 13:40:47] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 13:40:47] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 13:40:47] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@23382f76: 37 ms
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@554cd74a: 1 ms
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@51ce6f85: 5 ms
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@2f651f93: 4 ms
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@4a34e9f: 2 ms
+[2025-12-03 13:40:47] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@6f6621e3: 0 ms
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 4 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:41:45] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--732779147/testng-customsuite.xml
+
+[2025-12-03 15:41:45] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:41:45] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:41:52] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:41:52] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:41:52] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:41:56] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:41:56] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:41:56] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:41:56] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:41:56] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:41:56] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:41:56] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:41:56] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@309028af: 42 ms
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@70e889e9: 2 ms
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@7b4acdc2: 6 ms
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@342726f1: 4 ms
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@de77232: 4 ms
+[2025-12-03 15:41:56] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@62628e78: 0 ms
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 8 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:46:51] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--1048244241/testng-customsuite.xml
+
+[2025-12-03 15:46:51] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:46:51] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:46:57] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:46:57] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:46:57] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:47:01] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:47:01] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:47:01] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:47:02] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:47:02] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:47:02] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:47:02] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:47:02] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@1431267b: 35 ms
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@77134e08: 1 ms
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@468be356: 4 ms
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@7aead3af: 3 ms
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@ce9b9a9: 2 ms
+[2025-12-03 15:47:02] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@4ad3d266: 0 ms
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 4 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 11 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 8 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:04] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--1146280234/testng-customsuite.xml
+
+[2025-12-03 15:48:04] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:48:04] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:48:11] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:48:11] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:48:11] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:48:15] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:48:15] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:48:15] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:48:18] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:48:18] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:48:18] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:48:18] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:48:18] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@1431267b: 35 ms
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@77134e08: 1 ms
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@468be356: 6 ms
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@7aead3af: 3 ms
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@ce9b9a9: 3 ms
+[2025-12-03 15:48:19] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@4ad3d266: 0 ms
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 7 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:48:49] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--67752446/testng-customsuite.xml
+
+[2025-12-03 15:48:49] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 4 ms.
+[2025-12-03 15:48:49] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:48:54] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:48:54] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:48:54] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:48:58] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:48:58] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:48:58] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:48:58] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:48:58] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:48:58] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:48:59] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:48:59] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@1431267b: 36 ms
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@77134e08: 1 ms
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@468be356: 4 ms
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@7aead3af: 4 ms
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@ce9b9a9: 3 ms
+[2025-12-03 15:48:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@4ad3d266: 0 ms
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 9 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:50:49] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--1990172490/testng-customsuite.xml
+
+[2025-12-03 15:50:49] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:50:49] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:50:55] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:50:55] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:50:55] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:50:59] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:50:59] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:50:59] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:50:59] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:50:59] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:50:59] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:50:59] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:50:59] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@7b4acdc2: 36 ms
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@58f07f02: 1 ms
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@1431267b: 6 ms
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@5c9ac4cc: 3 ms
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3f49e266: 2 ms
+[2025-12-03 15:50:59] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@5f18f9d2: 0 ms
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:30] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:51:31] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--743323898/testng-customsuite.xml
+
+[2025-12-03 15:51:31] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:51:31] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:51:36] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:51:36] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:51:36] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:51:41] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:51:41] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:51:41] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:51:42] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:51:42] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:51:42] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:51:42] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:51:42] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@7b4acdc2: 35 ms
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@58f07f02: 1 ms
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@1431267b: 5 ms
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@5c9ac4cc: 4 ms
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3f49e266: 3 ms
+[2025-12-03 15:51:42] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@5f18f9d2: 0 ms
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 5 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 7 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 15:52:02] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--1459680377/testng-customsuite.xml
+
+[2025-12-03 15:52:02] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 15:52:02] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 15:52:08] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 15:52:08] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC016 test====
+[2025-12-03 15:52:08] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 15:52:12] [INFO ] [GM_Panel_Tests] - Navigating to Resource Approval page
+[2025-12-03 15:52:12] [INFO ] [GM_DashboardPage] - Clicking on Resource Approval from side bar.
+[2025-12-03 15:52:12] [INFO ] [GM_ResourceApprovalPage] - Entering resource type in searchfield.
+[2025-12-03 15:52:14] [INFO ] [GM_ResourceApprovalPage] - Searched resource type is filtered in table.
+[2025-12-03 15:52:14] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC018 test====
+[2025-12-03 15:52:14] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 15:52:14] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 15:52:14] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@7b4acdc2: 35 ms
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@58f07f02: 1 ms
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@1431267b: 4 ms
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@5c9ac4cc: 4 ms
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@3f49e266: 3 ms
+[2025-12-03 15:52:14] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@5f18f9d2: 0 ms
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 6 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 8 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 9 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:13:38] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse-85128019/testng-customsuite.xml
+
+[2025-12-03 16:13:38] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 4 ms.
+[2025-12-03 16:13:38] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 16:13:45] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 16:13:45] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC017 test====
+[2025-12-03 16:13:45] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 16:13:48] [INFO ] [GM_Panel_Tests] - Navigating to Material Approval page
+[2025-12-03 16:13:48] [INFO ] [GM_DashboardPage] - Clicking on Material Approval from side bar
+[2025-12-03 16:13:49] [INFO ] [GM_MaterialApprovalPage] - Entering Material Name
+[2025-12-03 16:13:51] [INFO ] [GM_Panel_Tests] - ====Finished AECP_GM_TC017 test====
+[2025-12-03 16:13:51] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 16:13:51] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 16:13:51] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@10ee04df: 36 ms
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@36f1046f: 1 ms
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@4e31c3ec: 5 ms
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@1d61c6dc: 3 ms
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@26f7cdf8: 2 ms
+[2025-12-03 16:13:51] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@376e7531: 0 ms
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 1 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 3 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 9 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 7 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[2025-12-03 16:32:23] [INFO ] [Utils] - [TestNG] Running:
+  /private/var/folders/70/t21qg8g92ln30svb_3t803q00000gn/T/testng-eclipse--32814225/testng-customsuite.xml
+
+[2025-12-03 16:32:23] [INFO ] [Utils] - [Utils] DynamicGraphHelper.createDynamicGraph() took 3 ms.
+[2025-12-03 16:32:23] [INFO ] [BaseClass] - ========== Starting WebDriver setup ==========
+[2025-12-03 16:32:29] [INFO ] [BaseClass] - Browser launched and navigated to AECP URL
+[2025-12-03 16:32:29] [INFO ] [GM_Panel_Tests] - ====Starting AECP_GM_TC019 test====
+[2025-12-03 16:32:29] [INFO ] [GM_Panel_Tests] - Logging in as General manager
+[2025-12-03 16:32:33] [INFO ] [GM_Panel_Tests] - Navigating to Leave Management page
+[2025-12-03 16:32:33] [INFO ] [GM_DashboardPage] - Clickin on Leave management from side bar
+[2025-12-03 16:32:33] [INFO ] [GM_LeaveManagementPage] - Entering Leave type in the searchfield.
+[2025-12-03 16:32:35] [INFO ] [BaseClass] - Closing browser window...
+[2025-12-03 16:32:35] [INFO ] [BaseClass] - Quitting WebDriver session...
+[2025-12-03 16:32:35] [INFO ] [BaseClass] - Browser quit successfully.
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.jq.Main@22367b8: 35 ms
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.FailedReporter@6482eef: 1 ms
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.XMLReporter@56ac5c80: 4 ms
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@70e889e9: 3 ms
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@604b1e1d: 3 ms
+[2025-12-03 16:32:35] [INFO ] [Utils] - [TestNG] Time taken by org.testng.internal.ExitCodeListener@62566842: 0 ms

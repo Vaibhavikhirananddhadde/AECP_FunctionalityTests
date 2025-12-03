@@ -1,5 +1,8 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,6 +11,8 @@ import org.testng.Assert;
 import base.BaseClass;
 
 public class GM_LeaveManagementPage extends BaseClass{
+	private static final Logger logger = LogManager.getLogger(GM_LeaveManagementPage.class);
+	
 	@FindBy(xpath="//button[text()='OK']")
 	WebElement btn_successfulOK;
 	
@@ -31,6 +36,12 @@ public class GM_LeaveManagementPage extends BaseClass{
 	
 	@FindBy(xpath="//table[@class='align-items-center table-flush table']/tbody/tr[1]/td[1]")
 	WebElement firstRowName;
+	
+	@FindBy(xpath="//input[@placeholder='Search Leave Type']")
+	WebElement txt_searchfield;
+	
+	@FindBy(xpath="//tbody/tr[1]")
+	WebElement firstRowTable;
 	
 	public GM_LeaveManagementPage() {
 		PageFactory.initElements(driver, this);
@@ -68,6 +79,20 @@ public class GM_LeaveManagementPage extends BaseClass{
 			Assert.assertEquals(firstRowName.getText(), "Sabari Raj S R");
 			System.out.println("Leave requested by HR displayed in GM panel");
 		}
+	}
+	
+	public void searchLeaveType(String leavetype) throws InterruptedException {
+		logger.info("Entering Leave type in the searchfield.");
+		txt_searchfield.sendKeys(leavetype);
+		Thread.sleep(2000);
+		
+		WebElement LeaveTypeElement = firstRowTable.findElement(By.xpath("./td[2]"));
+		String LeaveType = LeaveTypeElement.getText();
+		if(LeaveType.equalsIgnoreCase(leavetype)) {
+			System.out.println("Searched Leave type is : "+leavetype);
+			Assert.assertEquals(LeaveType, leavetype, "Leave request is not filtered in the table!");
+		}
+		
 	}
 
 }

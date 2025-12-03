@@ -1,5 +1,7 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -7,7 +9,9 @@ import pages.GM_BudgetPage;
 import pages.GM_ClientPage;
 import pages.GM_DashboardPage;
 import pages.GM_DepartmentPage;
+import pages.GM_EmployeePage;
 import pages.GM_LeaveManagementPage;
+import pages.GM_MaterialApprovalPage;
 import pages.GM_ProjectsPage;
 import pages.GM_ResourceApprovalPage;
 import pages.HR_DashboardPage;
@@ -17,6 +21,9 @@ import pages.PM_DashboardPage;
 import pages.PM_ResourceRequisitionPage;
 
 public class GM_Panel_Tests extends BaseClass {
+	
+	private static final Logger logger = LogManager.getLogger(GM_Panel_Tests.class);
+	
 	public LandingPage land;
 	public HR_DashboardPage hr_dashboard;
 	public PM_DashboardPage pm_dashboard;
@@ -29,6 +36,8 @@ public class GM_Panel_Tests extends BaseClass {
 	public GM_ProjectsPage gm_projects;
 	public GM_BudgetPage gm_budget;
 	public GM_DepartmentPage gm_department;
+	public GM_EmployeePage gm_empPage;
+	public GM_MaterialApprovalPage gm_approval;
 
 	// GM can Approve/Reject resource requests.
 	@Test(enabled = true)
@@ -205,6 +214,7 @@ public class GM_Panel_Tests extends BaseClass {
 	//Placeholder should present for each textfield in 'Add Project' form.
 	@Test
 	public void AECP_GM_TC014() throws Exception {
+		
 		waitImplicit();
 		land = new LandingPage();
 		land.clickLogin();
@@ -213,6 +223,104 @@ public class GM_Panel_Tests extends BaseClass {
 		gm_dashboard.clickOnProject();
 		gm_projects = new GM_ProjectsPage();
 		gm_projects.checkPlaceholder();
+	}
+	
+	//General manager can search employees easily by employees name.
+	@Test
+	public void AECP_GM_TC015() throws Exception {
+		logger.info("====Starting AECP_GM_TC015 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navigating to Employee page");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnEmployee();
+		
+		logger.info("Search employee by his name");
+		gm_empPage = new GM_EmployeePage();
+		gm_empPage.searchEmployee("Vaibhavi");
+		
+		logger.info("====Finished AECP_GM_TC015 test====");
+	}
+	
+	//Check that page header is displayed for all the pages.
+	@Test
+	public void AECP_GM_TC016() throws Exception {
+		logger.info("====Starting AECP_GM_TC016 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Checking page header is displayed for all the pages");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.check_headerDisplayed();
+		
+		logger.info("====Finished AECP_GM_TC016 test====");
+	}
+	
+	//General manager can search material requests easily by its name.
+	@Test
+	public void AECP_GM_TC017() throws Exception {
+		logger.info("====Starting AECP_GM_TC017 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navigating to Material Approval page");
+		gm_dashboard = new GM_DashboardPage();
+	    gm_dashboard.clickOnMaterialApproval();
+	    
+	    gm_approval = new GM_MaterialApprovalPage();
+	    gm_approval.searchMaterialRequests("cement");
+	    
+	    logger.info("====Finished AECP_GM_TC017 test====");
+	}
+	
+	
+	
+	//General manager can search resource requests easily by resource type.
+	@Test
+	public void AECP_GM_TC018() throws Exception {
+		logger.info("====Starting AECP_GM_TC016 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navigating to Resource Approval page");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnResourceApproval();
+		
+		gm_resourceApproval = new GM_ResourceApprovalPage();
+		gm_resourceApproval.searchResourceType("General Manager");
+		
+		logger.info("====Finished AECP_GM_TC018 test====");
+	}
+	
+	//General manager can search leave requests easily by leave type.
+	@Test
+	public void AECP_GM_TC019() throws Exception {
+		logger.info("====Starting AECP_GM_TC019 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navigating to Leave Management page");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnLeaveManagement();
+		
+		gm_leaveManagement = new GM_LeaveManagementPage();
+		gm_leaveManagement.searchLeaveType("Family Care Leave");
 	}
 
 	

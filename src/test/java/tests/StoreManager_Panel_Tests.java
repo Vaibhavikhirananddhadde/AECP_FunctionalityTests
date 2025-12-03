@@ -1,6 +1,7 @@
 package tests;
 
-import org.testng.Assert;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -13,6 +14,9 @@ import pages.StoreManager_VendorManagementPage;
 import pages.StoreManager_WastageMaintenancePage;
 
 public class StoreManager_Panel_Tests extends BaseClass {
+	
+	 private static final Logger logger = LogManager.getLogger(StoreManager_Panel_Tests.class);
+
 	public LandingPage land;
 	public StoreManager_DashboardPage storeDashboard;
 	public StoreManager_StoreManagementPage storeManagement;
@@ -24,14 +28,25 @@ public class StoreManager_Panel_Tests extends BaseClass {
 	// Store Manager can add in-house stock (new or existing products).
 	@Test
 	public void AECP_SM_TC001() throws Exception {
+		 logger.info("===== AECP_SM_TC001: GM can approve resource requests =====");
+		 
 		waitImplicit();
 		land = new LandingPage();
+		logger.info("Clicking Login");
 		land.clickLogin();
+		
 		land.loginStore();
+		logger.info("Logging in as store manager");
+		 
 		storeDashboard = new StoreManager_DashboardPage();
+		logger.info("Navigating to Store Management page");
 		storeDashboard.clickOnStoreManagement();
+		
 		storeManagement = new StoreManager_StoreManagementPage();
+		logger.info("Adding single inhouse stock");
 		storeManagement.addSingleInhouseStock();
+		
+		 logger.info("AECP_GM_TC001 completed successfully");
 	}
 
 	// System will update stock quantity, total stock, and cost automatically.

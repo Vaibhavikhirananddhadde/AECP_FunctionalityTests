@@ -2,6 +2,8 @@ package pages;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,6 +14,9 @@ import org.testng.Assert;
 import base.BaseClass;
 
 public class StoreManager_WastageMaintenancePage extends BaseClass{
+	
+	private static final Logger logger = LogManager.getLogger(StoreManager_WastageMaintenancePage.class);
+	
 	public StoreManager_WastageMaintenancePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -30,14 +35,28 @@ public class StoreManager_WastageMaintenancePage extends BaseClass{
 	@FindBy(xpath="//input[@name='newreplaceImage']") WebElement upload_newReplacedItemImage;
 	
 	public void addDamagedWaste() {
+		
+		logger.info("Clicking on Add new waste button");
 		WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(10));
 		btn_AddNewWaste.click();
+		
+		logger.info("Clicking on Damaged checkbox");
 		chkbox_Damaged.click();
+		
+		logger.info("Entering waste item name");
 		txt_wasteItemName.sendKeys("Damaged item X");
+		
+		logger.info("Uploading image document");
 		upload_image.sendKeys("/Users/admin/Downloads/Gemini_Generated_Image_khbncukhbncukhbn.png");
+		
+		logger.info("Clicking on Submit button");
 		btn_Submit.click();
+		
+		//validation
 		wait.until(ExpectedConditions.visibilityOf(btn_OK));
 		Assert.assertTrue(btn_OK.isDisplayed(), "Damaged item is not added successfully!");
+		
+		logger.info("Clicking on OK button");
 		btn_OK.click();
 	
 	}

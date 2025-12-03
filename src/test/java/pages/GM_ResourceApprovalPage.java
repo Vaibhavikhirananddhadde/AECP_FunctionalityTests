@@ -3,6 +3,8 @@ package pages;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -18,6 +20,8 @@ import org.testng.asserts.SoftAssert;
 import base.BaseClass;
 
 public class GM_ResourceApprovalPage extends BaseClass {
+	
+	private static final Logger logger = LogManager.getLogger(GM_ResourceApprovalPage.class);
 
 	@FindBy(xpath = "(//button[@class ='dropdown-toggle btn btn-secondary'])[2]")
 	WebElement dd_showEntries;
@@ -42,7 +46,13 @@ public class GM_ResourceApprovalPage extends BaseClass {
 
 	@FindBy(xpath = "//div[@class='align-items-center justify-content-xl-between row']")
 	WebElement footer;
-
+	
+	@FindBy(xpath="//input[@placeholder='Search Resource Type']")
+	WebElement searchfield;
+	
+	@FindBy(xpath="//tbody/tr[1]")
+	WebElement tableFirstRow;
+	
 	public GM_ResourceApprovalPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -155,5 +165,25 @@ public class GM_ResourceApprovalPage extends BaseClass {
 		assert1.assertEquals(finalStatus, "REJECTED", "Status did not change to Rejected");
 
 	}
+	
+	public void searchResourceType(String resourcetype) throws InterruptedException {
+		logger.info("Entering resource type in searchfield.");
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		searchfield.sendKeys(resourcetype);
+		Thread.sleep(2000);
+		
+		WebElement RscTypeElement = tableFirstRow.findElement(By.xpath("./td[1]"));
+		wait.until(ExpectedConditions.visibilityOf(RscTypeElement));
+		String ResourceType = RscTypeElement.getText();
+		if(ResourceType.equalsIgnoreCase(resourcetype)) {
+			Assert.assertEquals(ResourceType, resourcetype, "Searched resource is not filtered in table!");
+			System.out.println("Searched resource type is : "+ResourceType);
+		}
+		
+		logger.info("Searched resource type is filtered in table.");
+		
+	}
+	
+	
 
 }

@@ -1,7 +1,6 @@
 package pages;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 
 import base.BaseClass;
 
@@ -83,7 +81,6 @@ public class SEng_TaskPage extends BaseClass {
 	    "//div[contains(@class,'dropdown-menu') and contains(@class,'show')]//button[contains(@class,'dropdown-item')]"
 	);
 	
-	private By taskCards = By.xpath("//div[@class='row']/div[@class='text-left ml-3 col']");
 	
 	// all task titles (To-do + In-progress + Completed if they use same card structure)
 	private By taskTitleLocator = By.xpath(
