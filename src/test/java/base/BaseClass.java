@@ -1,11 +1,7 @@
 package base;
 
-import java.time.Duration;
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import utilities.BrowserOptions;
 import utilities.UtilClass;
 
 public class BaseClass extends UtilClass{
@@ -33,21 +28,30 @@ public class BaseClass extends UtilClass{
 		 
 	 
 	
-	   @BeforeMethod
-	    public void setUp() {
-		   logger.info("========== Starting WebDriver setup ==========");
+		 @BeforeMethod
+		 public void setUp() throws Exception {
+		     logger.info("========== Starting WebDriver setup ==========");
 
-	        // Get ChromeOptions from our reusable class
-	        driver = new ChromeDriver(BrowserOptions.getChromeOptions());
+		     // Path to your config.properties (relative to project root)
+		     String configPath = "/src/test/resources/configfiles/config.properties";
 
-	        // implicit wait
-	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		     // 1) Read browser name from properties
+		     launchBrowser(readProperty("browser", configPath), true);
+		    
 
-	        // open main URL
-	        driver.get("https://aecp.aecearth.io/");
-	        
-	        logger.info("Browser launched and navigated to AECP URL");
-	    }
+		     // 2) Read headless flag (optional)
+		     String headlessProp = readProperty("headless", configPath);
+		     boolean headless = Boolean.parseBoolean(headlessProp);
+		     logger.info("Headless mode: " + headless);
+
+
+		     // 4) Read base URL from config and open it
+		     String baseUrl = readProperty("url", configPath);
+		     logger.info("Navigating to URL: " + baseUrl);
+		     driver.get(baseUrl);
+
+		     logger.info("Browser launched and navigated to AECP URL");
+		 }
 	
 	@AfterMethod
 	public void tearDown() {

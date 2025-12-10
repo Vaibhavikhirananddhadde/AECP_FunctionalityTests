@@ -2,7 +2,6 @@ package utilities;
 
 
 import java.awt.AWTException;
-
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -59,7 +58,7 @@ public class UtilClass {
 	
 public static WebDriver driver;
 	
-	public static String readProperty(String key, String path) throws Exception {
+	public static String readProperty1(String key, String path) throws Exception {
 		String projectPath = System.getProperty("user.dir");
 		File file = new File(projectPath + path);
 		FileInputStream fileInput = new FileInputStream(file);
@@ -68,12 +67,94 @@ public static WebDriver driver;
 		return prop.get(key).toString();
 	}
 	
-	public static void launchBrowser(String browser) {
+	public static String readProperty(String key, String relativePath) {
+	    String projectDir = System.getProperty("user.dir");
+	    String fullPath = projectDir + relativePath;
+
+	    // Optional: use your logger if available
+	    System.out.println("Reading property '" + key + "' from: " + fullPath);
+
+	    Properties props = new Properties();
+
+	    try (FileInputStream fis = new FileInputStream(fullPath)) {
+	        props.load(fis);
+	    } catch (IOException e) {
+	        throw new RuntimeException("❌ Failed to load config file at: " + fullPath, e);
+	    }
+
+	    // ✅ USE getProperty, NOT get(...).toString()
+	    String value = props.getProperty(key);
+
+	    if (value == null) {
+	        throw new RuntimeException(
+	            "❌ Property '" + key + "' not found in config file: " + fullPath +
+	            " | Available keys: " + props.stringPropertyNames()
+	        );
+	    }
+
+	    return value.trim();
+	}
+
+	
+	public static void launchBrowser(String browser, boolean headless) {
+	    if (browser.equalsIgnoreCase("chrome")) {
+	        WebDriverManager.chromedriver().setup();
+	        ChromeOptions options = new ChromeOptions();
+
+	        if (headless) {
+	            // New headless mode for modern Chrome
+	            options.addArguments("--headless=new");
+	        }
+
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--disable-gpu");
+	        options.addArguments("--disable-extensions");
+	        options.addArguments("--disable-web-security");
+	        options.addArguments("--allow-running-insecure-content");
+	        options.addArguments("--disable-features=VizDisplayCompositor");
+	        options.setCapability("pageLoadStrategy", "normal");
+	        options.setCapability("timeouts", ImmutableMap.of("pageLoad", 120000));
+
+	        driver = new ChromeDriver(options);
+
+	    } else if (browser.equalsIgnoreCase("firefox")) {
+	        WebDriverManager.firefoxdriver().setup();
+	        FirefoxOptions options = new FirefoxOptions();
+//	      if (headless) {
+//	          options.addArguments("--headless");
+//	      }
+	        driver = new FirefoxDriver(options);
+
+	    } else if (browser.equalsIgnoreCase("edge")) {
+	        WebDriverManager.edgedriver().setup();
+	        driver = new EdgeDriver();
+
+	    } else {
+	        System.out.println("Opening Chrome browser as Default browser");
+	        WebDriverManager.chromedriver().setup();
+	        ChromeOptions options = new ChromeOptions();
+	        if (headless) {
+	            options.addArguments("--headless=new");
+	        }
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-dev-shm-usage");
+	        driver = new ChromeDriver(options);
+	    }
+
+	    driver.manage().window().maximize();
+	    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	}
+	
+	
+	
+	public static void launchBrowser1(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			// Remove headless mode for better stability
-			// options.addArguments("--headless");
+		    options.addArguments("--headless");
 			options.addArguments("--no-sandbox");
 			options.addArguments("--disable-dev-shm-usage");
 			options.addArguments("--disable-gpu");

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -49,6 +50,9 @@ public class GM_ResourceApprovalPage extends BaseClass {
 	
 	@FindBy(xpath="//input[@placeholder='Search Resource Type']")
 	WebElement searchfield;
+	
+	@FindBy(xpath="//td[normalize-space()='No details available, Project not yet started']")
+	WebElement searchInvalidMsg;
 	
 	@FindBy(xpath="//tbody/tr[1]")
 	WebElement tableFirstRow;
@@ -181,6 +185,28 @@ public class GM_ResourceApprovalPage extends BaseClass {
 		}
 		
 		logger.info("Searched resource type is filtered in table.");
+		
+	}
+	
+	public void searchInvalidResourceType(String InvalidResource) throws InterruptedException {
+		logger.info("Entering invalid resource type in searchfield.");
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		searchfield.sendKeys(InvalidResource);
+		Thread.sleep(2000);
+		
+		logger.info("Checking proper message is displayed when there is no data");
+		wait.until(ExpectedConditions.visibilityOf(searchInvalidMsg));
+		String message = searchInvalidMsg.getText();
+		System.out.println("Displayed message is : "+message);
+		
+		Assert.assertTrue(message.toLowerCase().contains("no"), "Invalid search message is not displayed!");
+		logger.info("nvalid search message validated successfully.");
+		}
+		catch(TimeoutException e) {
+			logger.error("Table still has data - filter not working", e);
+			Assert.fail("search field - expected 'no records found' message but table shows data");
+		}
 		
 	}
 	

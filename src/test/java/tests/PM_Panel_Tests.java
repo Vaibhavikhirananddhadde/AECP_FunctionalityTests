@@ -1,5 +1,7 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -27,6 +29,8 @@ import pages.SEng_DashboardPage;
 import pages.SEng_ResourceRequestPage;
 
 public class PM_Panel_Tests extends BaseClass {
+	private static final Logger logger = LogManager.getLogger(PM_Panel_Tests.class);
+	
 	public LandingPage land;
 	public HR_DashboardPage hr_dashboard;
 	public PM_DashboardPage pm_dashboard;
@@ -54,25 +58,39 @@ public class PM_Panel_Tests extends BaseClass {
 	// projects, Completed Tasks in the dashboard.
 	@Test
 	public void AECP_PM_TC001() throws Exception {
+		logger.info("====Starting AECP_PM_TC001 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Dashboard");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.checkKPIcardsDisplayed();
+		
+		logger.info("====Finished AECP_PM_TC001 test ====");
 	}
 
 	// The project manager can see project details.
 	@Test
 	public void AECP_PM_TC002() throws Exception {
+		logger.info("====Starting AECP_PM_TC002 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to projects page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnProjects();
 		pm_project = new PM_ProjectPage();
 		pm_project.checkProjectDetails();
+		
+		logger.info("====Finished AECP_PM_TC002 test====");
 	}
 
 	/*
@@ -82,42 +100,62 @@ public class PM_Panel_Tests extends BaseClass {
 	 */
 	@Test(enabled = true)
 	public void AECP_PM_TC003() throws Exception {
+		logger.info("====Starting AECP_PM_TC003 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Tasks page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnTask();
 		pm_task = new PM_TaskPage();
 		pm_task.addTask();
 
+		logger.info("====Finished AECP_PM_TC003 test====");
 	}
 
 	// Project Manager, Site engineer can request for materials Store manager &
 	// General manager approves/ rejects.
 	@Test
 	public void AECP_PM_TC004() throws Exception {
+		logger.info("====Starting AECP_PM_TC004 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Material Requisition page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnMaterialRequisition();
 		pm_materialRequest = new PM_MaterialRequestPage();
 		pm_materialRequest.requestMaterial();
+		
+		logger.info("====Finished AECP_PM_TC004 test====");
 	}
 
 	// Project Manager should be able to see all the engineers for the selected project.
 	@Test
 	public void AECP_PM_TC005() throws Exception {
+		logger.info("====Starting AECP_PM_TC005 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Site Engineer page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnSiteEngineer();
 		pm_engineer = new PM_EngineersPage();
 		pm_engineer.Check_SiteEngineersList();
+		
+		logger.info("====Finished AECP_PM_TC005 test====");
 
 	}
 
@@ -125,58 +163,101 @@ public class PM_Panel_Tests extends BaseClass {
 	// (General manager will add budget for the project while creating the project).
 	@Test
 	public void AECP_PM_TC006() throws Exception {
+		logger.info("====Starting AECP_PM_TC006 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Budget page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnBudget();
 		Thread.sleep(3000);
 		pm_budget = new PM_BudgetPage();
 		pm_budget.checkBudgetForProject();
+		
+		logger.info("====Finished AECP_PM_TC006 test====");
 
 	}
 
 	// Project Manager should be able to generate task report assigned to him.
 	@Test
 	public void AECP_PM_TC007() throws Exception {
+		logger.info("====Starting AECP_PM_TC007 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Task Report page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnTaskReport();
 		Thread.sleep(3000);
 		pm_taskReport = new PM_TaskReportPage();
 		pm_taskReport.generateReport();
 
+		logger.info("====Finished AECP_PM_TC007 test====");
 	}
 
 	// Project Manager should see employee list for the selected project.
 	@Test
 	public void AECP_PM_TC008() throws Exception {
+		logger.info("====Starting AECP_PM_TC008 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Site Engineer page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnSiteEngineer();
 		pm_engineer = new PM_EngineersPage();
 		pm_engineer.Check_SiteEngineersList();
+		
+		logger.info("====Finished AECP_PM_TC008 test====");
 	}
 
 	// Project Manager can apply for Leave.
 	@Test
 	public void AECP_PM_TC009() throws Exception {
+		logger.info("====Starting AECP_PM_TC009 test====");
 		waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
 		land = new LandingPage();
 		land.clickLogin();
 		land.loginPM();
+		
+		logger.info("Navigating to Leave Management page");
 		pm_dashboard = new PM_DashboardPage();
 		pm_dashboard.clickOnLeaveManagement();
 		pm_leaveManagement = new PM_LeaveManagementPage();
 		pm_leaveManagement.applyLeave();
-
+		
+		logger.info("====Finished AECP_PM_TC009 test====");
+	}
+	
+	//Check page header is displayed for all the pages.
+	@Test
+	public void AECP_PM_TC010() throws Exception {
+		logger.info("====Starting AECP_PM_TC010 test====");
+        waitImplicit();
+		
+		logger.info("Logging in as Project Manager");
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginPM();
+		
+		logger.info("checking page header is displayed for all the pages.");
+		pm_dashboard = new PM_DashboardPage();
+		pm_dashboard.checkPageHeaderDisplayed();
+		logger.info("====Finished AECP_PM_TC010 test====");
 	}
 
 }

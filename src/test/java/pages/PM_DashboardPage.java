@@ -36,6 +36,22 @@ public class PM_DashboardPage extends BaseClass{
 	
 	@FindBy(xpath="//a[text()='Leave Management']") WebElement navlink_LeaveManagement;
 	
+	@FindBy(xpath="//h1[normalize-space()='Project Details']") WebElement pageHeader_Project;
+	
+	@FindBy(xpath="//h2[normalize-space()='Your Task']") WebElement pageHeader_Task;
+	
+	@FindBy(xpath="//h1[normalize-space()='Materials Details']") WebElement pageHeader_MaterialRequisition;
+	
+	@FindBy(xpath="//h1[normalize-space()='Employee Details']") WebElement pageHeader_SiteEngineer;
+	
+	@FindBy(xpath="//h1[normalize-space()='Budget']") WebElement pageHeader_Budget;
+	
+	@FindBy(xpath="//h1[normalize-space()='Leave Management Table']") WebElement pageHeader_LeaveManagement;
+	
+	@FindBy(xpath="//h3[normalize-space()='Task Details']") WebElement pageHeader_TaskReport;
+	
+	@FindBy(xpath="//h1[normalize-space()='Request Resource']") WebElement pageHeader_ResourceRequisition;
+	
 	public PM_DashboardPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -96,6 +112,32 @@ public class PM_DashboardPage extends BaseClass{
 	
 	public void clickOnLeaveManagement() {
 		navlink_LeaveManagement.click();
+	}
+	
+	public void checkPageHeaderDisplayed() {
+		navlink_Projects.click();
+		Assert.assertTrue(navlink_Projects.isDisplayed(), "Page header is not displayed for "+navlink_Projects.getText()+" page");
+		
+		navlink_Task.click();
+		Assert.assertTrue(pageHeader_Task.isDisplayed(), "Page header is not displayed for "+navlink_Task.getText()+" page");
+		
+		navlink_MaterialRequisition.click();
+		Assert.assertTrue(pageHeader_MaterialRequisition.isDisplayed(), "Page header is not displayed for "+navlink_MaterialRequisition.getText());
+		
+		navlink_SiteEngineer.click();
+		Assert.assertTrue(pageHeader_SiteEngineer.isDisplayed(), "Page header is not displayed for "+navlink_SiteEngineer.getText());
+		
+		navlink_LeaveManagement.click();
+		Assert.assertTrue(pageHeader_LeaveManagement.isDisplayed(),"Page header is not displayed for "+navlink_LeaveManagement.getText());
+		
+		navlink_TaskReport.click();
+		Assert.assertTrue(pageHeader_TaskReport.isDisplayed(), "Page header is not displayed for "+navlink_TaskReport.getText());
+		
+		navLink_ResourceRequisition.click();
+		Assert.assertTrue(pageHeader_ResourceRequisition.isDisplayed(), "Page header is not displayed for "+navLink_ResourceRequisition.getText());
+		
+		navlink_Budget.click();
+		Assert.assertTrue(pageHeader_Budget.isDisplayed(), "Page header is not displayed for "+navlink_Budget.getText());
 	}
 
 }

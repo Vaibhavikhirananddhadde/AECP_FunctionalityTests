@@ -1,5 +1,7 @@
 package tests;
 
+
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
@@ -321,6 +323,149 @@ public class GM_Panel_Tests extends BaseClass {
 		
 		gm_leaveManagement = new GM_LeaveManagementPage();
 		gm_leaveManagement.searchLeaveType("Family Care Leave");
+	}
+	
+	//Verify that proper message is displayed when there is no matching leave type is present.
+	@Test
+	public void AECP_GM_TC020() throws Exception {
+		logger.info("====Starting AECP_GM_TC020 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navigating to Leave Management page");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnLeaveManagement();
+		
+		gm_leaveManagement = new GM_LeaveManagementPage();
+		gm_leaveManagement.searchLeaveTypeInvalid("Test invalid leave type");
+		
+		logger.info("====Finished AECP_GM_TC020 test====");
+	}
+	
+	//Verify that proper message is displayed when there is no matching Resource type is present.
+	@Test
+	public void AECP_GM_TC021() throws Exception {
+		logger.info("====Starting AECP_GM_TC021 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navligating to Resource Approval page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnResourceApproval();
+		
+		gm_resourceApproval = new GM_ResourceApprovalPage();
+		gm_resourceApproval.searchInvalidResourceType("Testing ABC role");
+		
+		logger.info("====Finished AECP_GM_TC021 test====");
+	}
+	
+	//Verify that proper message is displayed when there is no matching material request is present.
+	@Test
+	public void AECP_GM_TC022() throws Exception {
+		logger.info("====Starting AECP_GM_TC022 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+
+		logger.info("Navligating to Material Approval page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnMaterialApproval();
+		
+		 gm_approval = new GM_MaterialApprovalPage();
+		 gm_approval.searchInvalidMaterial("TestMaterial");
+		 
+		 logger.info("====Finished AECP_GM_TC022 test====");
+	}
+	 
+    //Verify that proper message is displayed when there is no matching Employee is present.
+	@Test
+	public void AECP_GM_TC023() throws Exception {
+		logger.info("====Starting AECP_GM_TC023 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+
+		logger.info("Navligating to Employee page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnEmployee();
+		
+		gm_empPage = new GM_EmployeePage();
+		gm_empPage.searchInvalidEmployee("Test QA");
+		
+		logger.info("====Finished AECP_GM_TC023 test====");
+	}
+	
+	//General manager can view material details raised by site engineer or Project manager.
+	@Test
+	public void AECP_GM_TC024() throws Exception {
+		logger.info("====Starting AECP_GM_TC024 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navligating to Material Approval page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnMaterialApproval();
+		
+		 gm_approval = new GM_MaterialApprovalPage();
+		 gm_approval.viewMaterialDetails();
+
+		 logger.info("====Finished AECP_GM_TC024 test====");
+		
+	}
+		
+	//General manager can accept material request.
+	@Test
+	public void AECP_GM_TC025() throws Exception {
+		logger.info("====Starting AECP_GM_TC025 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navligating to Material Approval page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnMaterialApproval();
+		
+		 gm_approval = new GM_MaterialApprovalPage();
+		 gm_approval.approveMaterialRequest();
+		 
+		 logger.info("====Finished AECP_GM_TC025 test====");
+	}
+	
+	//General manager can reject material request.
+	@Test
+	public void AECP_GM_TC026() throws Exception {
+		logger.info("====Starting AECP_GM_TC026 test====");
+		logger.info("Logging in as General manager");
+		waitImplicit();
+		land = new LandingPage();
+		land.clickLogin();
+		land.loginGM();
+		
+		logger.info("Navligating to Material Approval page.");
+		gm_dashboard = new GM_DashboardPage();
+		gm_dashboard.clickOnMaterialApproval();
+		
+		 gm_approval = new GM_MaterialApprovalPage();
+		 gm_approval.rejectMaterialRequest();
+		 
+		 logger.info("====Finished AECP_GM_TC026 test====");
 	}
 
 	

@@ -3,6 +3,7 @@ package pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -39,6 +40,9 @@ public class GM_LeaveManagementPage extends BaseClass{
 	
 	@FindBy(xpath="//input[@placeholder='Search Leave Type']")
 	WebElement txt_searchfield;
+	
+	@FindBy(xpath="//td[normalize-space()='No leave applications found for HR employees']")
+	WebElement msg_invalidSearch;
 	
 	@FindBy(xpath="//tbody/tr[1]")
 	WebElement firstRowTable;
@@ -91,6 +95,33 @@ public class GM_LeaveManagementPage extends BaseClass{
 		if(LeaveType.equalsIgnoreCase(leavetype)) {
 			System.out.println("Searched Leave type is : "+leavetype);
 			Assert.assertEquals(LeaveType, leavetype, "Leave request is not filtered in the table!");
+		}else
+		{
+			System.out.println(firstRowTable.getText());
+		}
+		
+	}
+	
+	public void searchLeaveTypeInvalid(String InvalidType) throws InterruptedException {
+		logger.info("Entering Invalid Leave type in the searchfield.");
+		try {
+		txt_searchfield.sendKeys(InvalidType);
+		Thread.sleep(2000);
+		
+		logger.info("Checking proper message is displayed or not");
+		String invalidSearchMsg = msg_invalidSearch.getText();
+		 System.out.println("Displayed message: " + invalidSearchMsg);
+		 
+		//Validation
+		 Assert.assertTrue(
+				 invalidSearchMsg.toLowerCase().contains("no") || invalidSearchMsg.toLowerCase().contains("record"),
+				 "Invalid search message is not displayed!");
+		 
+		 logger.info("Invalid search message validated successfully.");
+		}
+		catch(TimeoutException e){
+			logger.error("Table still has data – filter not working!", e);
+			Assert.fail("Search failed – expected 'No records found' message but table shows data.");
 		}
 		
 	}
