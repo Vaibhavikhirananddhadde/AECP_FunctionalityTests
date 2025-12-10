@@ -1,0 +1,30 @@
+name: AECP Selenium CI
+
+on:
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+  workflow_dispatch:   # manual run button
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      # Mark we're in CI, we can read this in Java to use headless mode
+      CI: "true"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+          cache: "maven"
+
+      - name: Run Maven tests
+        run: mvn -B test
